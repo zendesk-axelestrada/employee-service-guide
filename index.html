@@ -546,6 +546,11 @@ git clone git@github.com:zendesk/employee-service-design-kit.git</code></pre>
     <h2>Interactive development skills</h2>
     <p class="section__intro">Conversational helpers for translations, colors, and production readiness.</p>
 
+    <div class="callout" style="background:var(--bg-accent);border-color:var(--accent)">
+      <span class="callout__tag">📍 How to use</span>
+      <p>Open Claude Code in your terminal (within Cursor or standalone). Type the slash command like <code>/translate</code> and press Enter. Claude starts a conversation with you. No scripts, no Y/N prompts — just tell Claude what you need.</p>
+    </div>
+
     <div style="display:grid;gap:24px;margin-top:32px">
       <div class="workflow-phase">
         <div class="workflow-phase__header">
@@ -602,7 +607,19 @@ git clone git@github.com:zendesk/employee-service-design-kit.git</code></pre>
       </div>
     </div>
 
-    <div class="callout" style="margin-top:32px">
+    <div class="callout" style="margin-top:32px;background:var(--warning-wash);border-color:var(--warning-border)">
+      <span class="callout__tag">Example workflow</span>
+      <div style="font-family:var(--font-mono);font-size:14px;line-height:1.8;margin-top:8px">
+        <div style="color:var(--muted)">You: <code>/translate</code></div>
+        <div style="color:var(--accent-dark)">Claude: "Which component would you like to add translations to?"</div>
+        <div style="color:var(--muted)">You: <code>FloraActionsMenu.tsx</code></div>
+        <div style="color:var(--accent-dark)">Claude: "Found: 1. 'Edit field order' 2. 'Actions'. Which need translation?"</div>
+        <div style="color:var(--muted)">You: <code>Only #1, #2 is existing production code</code></div>
+        <div style="color:var(--accent-dark)">Claude: [Wraps only "Edit field order" with t()]</div>
+      </div>
+    </div>
+
+    <div class="callout" style="margin-top:16px">
       <span class="callout__tag">Why skills > scripts</span>
       <p><strong>Scripts force Y/N decisions.</strong> Skills ask questions, show context, let you choose exactly what to change. Work on one component at a time. Skip mock data. Understand why something was flagged. Iterate naturally.</p>
     </div>
