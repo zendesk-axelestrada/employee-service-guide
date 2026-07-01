@@ -539,6 +539,76 @@ git clone git@github.com:zendesk/employee-service-design-kit.git</code></pre>
   </div>
 </section>
 
+<!-- Claude Code Skills -->
+<section class="section">
+  <div class="container">
+    <span class="section__label">Claude Code</span>
+    <h2>Interactive development skills</h2>
+    <p class="section__intro">Conversational helpers for translations, colors, and production readiness.</p>
+
+    <div style="display:grid;gap:24px;margin-top:32px">
+      <div class="workflow-phase">
+        <div class="workflow-phase__header">
+          <div class="workflow-phase__num">/</div>
+          <div class="workflow-phase__title">
+            <h3>translate</h3>
+            <p class="workflow-phase__meta">Interactive translation helper</p>
+          </div>
+        </div>
+        <div class="code">
+          <div class="code__bar">
+            <span class="code__lang"><svg viewBox="0 0 24 24" fill="none"><path d="M5 7l4 4-4 4M12 17h7" stroke="currentColor" stroke-width="2" stroke-linecap="round"/></svg>Claude Code</span>
+            <button class="code__copy" onclick="copyCode(this)">Copy</button>
+          </div>
+          <pre><code>/translate</code></pre>
+        </div>
+        <p>Claude asks which component to check, shows all strings, you pick which ones need <code>t()</code> wrapping. Conversational and selective — skip mock data, translate only what matters.</p>
+      </div>
+
+      <div class="workflow-phase">
+        <div class="workflow-phase__header">
+          <div class="workflow-phase__num">/</div>
+          <div class="workflow-phase__title">
+            <h3>check-colors</h3>
+            <p class="workflow-phase__meta">Flora token replacement</p>
+          </div>
+        </div>
+        <div class="code">
+          <div class="code__bar">
+            <span class="code__lang"><svg viewBox="0 0 24 24" fill="none"><path d="M5 7l4 4-4 4M12 17h7" stroke="currentColor" stroke-width="2" stroke-linecap="round"/></svg>Claude Code</span>
+            <button class="code__copy" onclick="copyCode(this)">Copy</button>
+          </div>
+          <pre><code>/check-colors</code></pre>
+        </div>
+        <p>Shows hardcoded hex colors with context. You choose which to replace. Claude suggests matching Flora tokens with fallbacks. Visual appearance stays identical.</p>
+      </div>
+
+      <div class="workflow-phase">
+        <div class="workflow-phase__header">
+          <div class="workflow-phase__num">/</div>
+          <div class="workflow-phase__title">
+            <h3>review-prototype</h3>
+            <p class="workflow-phase__meta">Production readiness review</p>
+          </div>
+        </div>
+        <div class="code">
+          <div class="code__bar">
+            <span class="code__lang"><svg viewBox="0 0 24 24" fill="none"><path d="M5 7l4 4-4 4M12 17h7" stroke="currentColor" stroke-width="2" stroke-linecap="round"/></svg>Claude Code</span>
+            <button class="code__copy" onclick="copyCode(this)">Copy</button>
+          </div>
+          <pre><code>/review-prototype</code></pre>
+        </div>
+        <p>Checks specific components or entire feature for hardcoded strings, colors, console logs, TypeScript issues. Shows findings with line numbers. You pick what to fix.</p>
+      </div>
+    </div>
+
+    <div class="callout" style="margin-top:32px">
+      <span class="callout__tag">Why skills > scripts</span>
+      <p><strong>Scripts force Y/N decisions.</strong> Skills ask questions, show context, let you choose exactly what to change. Work on one component at a time. Skip mock data. Understand why something was flagged. Iterate naturally.</p>
+    </div>
+  </div>
+</section>
+
 <!-- Workflow -->
 <section class="section" style="background:var(--bg-accent)">
   <div class="container">
@@ -547,8 +617,8 @@ git clone git@github.com:zendesk/employee-service-design-kit.git</code></pre>
     <p class="section__intro">When you're ready to share, version, and hand off to developers.</p>
 
     <div class="callout">
-      <span class="callout__tag">✨ New: Simplified Commands (July 2026)</span>
-      <p>The template now includes wrapper scripts for <strong>all</strong> workflow commands. Run <code>./publish.sh</code>, <code>./check-compliance.sh</code>, <code>./check-translations.sh</code>, etc. directly from your project folder — no more typing long paths! Scripts automatically handle JFrog authentication and find the design kit installation.</p>
+      <span class="callout__tag">✨ New: Interactive Claude Code Skills (July 2026)</span>
+      <p>The template includes <strong>conversational Claude Code skills</strong> for prototype development. Use <code>/translate</code>, <code>/check-colors</code>, and <code>/review-prototype</code> in Claude Code terminal for interactive, contextual help. Unlike scripts that force Y/N decisions, skills ask questions, show context, and let you choose exactly what to change. Plus simplified wrapper scripts for all workflow commands.</p>
     </div>
 
     <div class="workflow-phase">
