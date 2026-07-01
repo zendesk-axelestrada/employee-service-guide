@@ -547,8 +547,8 @@ git clone git@github.com:zendesk/employee-service-design-kit.git</code></pre>
     <p class="section__intro">When you're ready to share, version, and hand off to developers.</p>
 
     <div class="callout">
-      <span class="callout__tag">Note</span>
-      <p>These scripts were added June 2026. Based on the <a href="https://github.com/zendesk/itam-column-visibility-prototype" target="_blank">column-visibility prototype</a>.</p>
+      <span class="callout__tag">✨ New: Simplified Commands (July 2026)</span>
+      <p>The template now includes wrapper scripts (<code>./publish.sh</code>, <code>./check-compliance.sh</code>) that you run directly from your project folder. No more typing long paths! The publish script also automatically handles JFrog authentication for Zendesk npm packages.</p>
     </div>
 
     <div class="workflow-phase">
@@ -575,9 +575,9 @@ git clone git@github.com:zendesk/employee-service-design-kit.git</code></pre>
           <span class="code__lang"><svg viewBox="0 0 24 24" fill="none"><path d="M5 7l4 4-4 4M12 17h7" stroke="currentColor" stroke-width="2" stroke-linecap="round"/></svg>Terminal</span>
           <button class="code__copy" onclick="copyCode(this)">Copy</button>
         </div>
-        <pre><code>~/zendesk/design-kits/employee-service-design-kit/scripts/publish-to-zendesk.sh</code></pre>
+        <pre><code>./publish.sh</code></pre>
       </div>
-      <p>Creates private repo + live GitHub Pages site.</p>
+      <p>Creates private repo + live GitHub Pages site. Automatically configures npm authentication for Zendesk packages.</p>
     </div>
 
     <div class="workflow-phase">
@@ -611,21 +611,21 @@ git clone git@github.com:zendesk/employee-service-design-kit.git</code></pre>
           <span class="code__lang"><svg viewBox="0 0 24 24" fill="none"><path d="M5 7l4 4-4 4M12 17h7" stroke="currentColor" stroke-width="2" stroke-linecap="round"/></svg>Code</span>
           <button class="code__copy" onclick="copyCode(this)">Copy</button>
         </div>
-        <pre><code>~/zendesk/design-kits/.../scripts/check-production-compliance.sh</code></pre>
+        <pre><code>./check-compliance.sh</code></pre>
       </div>
       <div class="code">
         <div class="code__bar">
           <span class="code__lang"><svg viewBox="0 0 24 24" fill="none"><path d="M5 7l4 4-4 4M12 17h7" stroke="currentColor" stroke-width="2" stroke-linecap="round"/></svg>i18n</span>
           <button class="code__copy" onclick="copyCode(this)">Copy</button>
         </div>
-        <pre><code>~/zendesk/design-kits/.../scripts/check-translations.sh</code></pre>
+        <pre><code>~/zendesk/design-kits/employee-service-design-kit/scripts/check-translations.sh</code></pre>
       </div>
       <div class="code">
         <div class="code__bar">
           <span class="code__lang"><svg viewBox="0 0 24 24" fill="none"><path d="M5 7l4 4-4 4M12 17h7" stroke="currentColor" stroke-width="2" stroke-linecap="round"/></svg>a11y</span>
           <button class="code__copy" onclick="copyCode(this)">Copy</button>
         </div>
-        <pre><code>~/zendesk/design-kits/.../scripts/audit-accessibility.sh</code></pre>
+        <pre><code>~/zendesk/design-kits/employee-service-design-kit/scripts/audit-accessibility.sh</code></pre>
       </div>
     </div>
 
