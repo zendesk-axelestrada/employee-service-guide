@@ -538,6 +538,54 @@ a:hover {
 ::-webkit-scrollbar-thumb:hover {
   background: var(--gray-mid);
 }
+
+/* Troubleshooting expandable cards */
+.troubleshooting-card {
+  transition: background 0.3s ease;
+}
+
+.troubleshooting-card summary {
+  transition: background 0.2s ease;
+}
+
+.troubleshooting-card summary svg {
+  transition: transform 0.25s ease;
+}
+
+.troubleshooting-card[open] summary svg {
+  transform: rotate(180deg);
+}
+
+.troubleshooting-card summary::-webkit-details-marker {
+  display: none;
+}
+
+.troubleshooting-card summary:hover {
+  background: #f5f5f5;
+}
+
+.troubleshooting-card summary code:hover {
+  background: var(--gray-light);
+  border-color: var(--gray-border);
+  color: var(--gray-dark);
+}
+
+.troubleshooting-card[open] {
+  background: var(--gray-sidebar);
+}
+
+.troubleshooting-content {
+  animation: fadeInSmooth 0.3s ease forwards;
+}
+
+@keyframes fadeInSmooth {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
 </style>
 </head>
 <body>
@@ -559,9 +607,9 @@ a:hover {
       Skills
       <span class="nav-badge">Soon</span>
     </a>
-    <a class="nav-item" style="opacity: 0.5; cursor: not-allowed; pointer-events: none;">
-      External Resources
-      <span class="nav-badge">Soon</span>
+    <a class="nav-item" data-section="troubleshooting">
+      Troubleshooting
+      <span class="nav-badge wip">WIP</span>
     </a>
     <a class="nav-item" data-section="contact">Contact</a>
   </nav>
@@ -873,6 +921,7 @@ a:hover {
         </div>
         <p class="card-text" style="margin-top: 16px;">Switch to Cursor's integrated terminal now. Press <code>Ctrl + `</code> (backtick) or select <strong>Terminal</strong> → <strong>New Terminal</strong>.</p>
         <p class="card-text" style="margin-top: 16px;">Copy the script, paste it in Terminal, and hit Enter. Pick your template from the wizard. This copies template files, installs dependencies, and sets up git. Takes about 30 seconds.</p>
+        <p class="card-text" style="margin-top: 16px;">If you run into issues with this step, visit <a href="#npm-auth-error" onclick="document.querySelector('[data-section=troubleshooting]').click(); setTimeout(() => { const card = document.getElementById('npm-auth-error'); card.open = true; card.scrollIntoView({ behavior: 'smooth', block: 'center' }); }, 100); return false;">Troubleshooting</a>.</p>
       </div>
     </div>
 
@@ -970,15 +1019,129 @@ a:hover {
       <p class="card-text" style="margin-top: 16px;">Describe what you want in plain English. Cursor Agents handle the code.</p>
 
       <div style="margin-top: 24px;">
-        <h3 style="font-size: 15px; font-weight: 600; color: var(--gray-darker); margin: 0 0 12px 0;">Two approaches:</h3>
-        <ul style="list-style: disc; padding-left: 24px; display: flex; flex-direction: column; gap: 8px;">
+        <h3 style="font-size: 15px; font-weight: 600; color: var(--gray-darker); margin: 0 0 12px 0;">AI understands plain language</h3>
+        <p class="card-text">This template includes AI configuration files that teach agents to understand plain language when building UIs. No need to specify import paths or exact prop names. Just describe what you want.</p>
+
+        <div class="terminal" style="margin-top: 16px;">
+          <div class="terminal-header">
+            <div class="terminal-title">Configuration files</div>
+          </div>
+          <div class="terminal-body">
+            <code><span style="color: #4fc3f7;">.cursorrules</span>      <span style="color: #888;">// For Cursor Composer/Chat</span><br>
+<span style="color: #4fc3f7;">CLAUDE.md</span>        <span style="color: #888;">// For Claude Code CLI</span></code>
+          </div>
+        </div>
+
+        <p class="card-text" style="margin-top: 16px;">Both files work automatically when you open the project. They map plain language to Garden components and Flora tokens.</p>
+
+        <div class="terminal" style="margin-top: 16px;">
+          <div class="terminal-header">
+            <div class="terminal-title">Example prompt</div>
+          </div>
+          <div class="terminal-body">
+            <code>Implement this design from Figma:<br>
+<span style="color: #4fc3f7;">@https://www.figma.com/design/YOUR-FILE-ID?node-id=123</span><br><br>
+Use a primary button, data table with sortable columns, and Flora spacing.</code>
+          </div>
+        </div>
+
+        <p class="card-text" style="margin-top: 16px;">AI automatically maps your plain language to the correct components:</p>
+
+        <ul style="list-style: none; padding-left: 0; margin-top: 12px; display: flex; flex-direction: column; gap: 8px;">
           <li style="font-size: 17px; line-height: 1.7; color: var(--gray-dark);">
-            <strong>Figma MCP:</strong> Cursor reads components directly from your Figma files
+            <svg width="16" height="16" viewBox="0 0 16 16" fill="none" xmlns="http://www.w3.org/2000/svg" style="display: inline-block; margin-right: 8px; vertical-align: text-bottom;">
+              <circle cx="8" cy="8" r="8" fill="#E4EAF6"/>
+              <path d="M5 8L7 10L11 6" stroke="#1F335A" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+            </svg>
+            "primary button" → <code>&lt;Button isPrimary&gt;</code> from Garden
           </li>
           <li style="font-size: 17px; line-height: 1.7; color: var(--gray-dark);">
-            <strong>Copy-paste:</strong> Copy React code from Figma Dev Mode and paste into prompts
+            <svg width="16" height="16" viewBox="0 0 16 16" fill="none" xmlns="http://www.w3.org/2000/svg" style="display: inline-block; margin-right: 8px; vertical-align: text-bottom;">
+              <circle cx="8" cy="8" r="8" fill="#E4EAF6"/>
+              <path d="M5 8L7 10L11 6" stroke="#1F335A" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+            </svg>
+            "data table" → <code>&lt;Table&gt;</code> component with proper structure
+          </li>
+          <li style="font-size: 17px; line-height: 1.7; color: var(--gray-dark);">
+            <svg width="16" height="16" viewBox="0 0 16 16" fill="none" xmlns="http://www.w3.org/2000/svg" style="display: inline-block; margin-right: 8px; vertical-align: text-bottom;">
+              <circle cx="8" cy="8" r="8" fill="#E4EAF6"/>
+              <path d="M5 8L7 10L11 6" stroke="#1F335A" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+            </svg>
+            "Flora spacing" → <code>var(--spacing-md)</code> CSS tokens
+          </li>
+          <li style="font-size: 17px; line-height: 1.7; color: var(--gray-dark);">
+            <svg width="16" height="16" viewBox="0 0 16 16" fill="none" xmlns="http://www.w3.org/2000/svg" style="display: inline-block; margin-right: 8px; vertical-align: text-bottom;">
+              <circle cx="8" cy="8" r="8" fill="#E4EAF6"/>
+              <path d="M5 8L7 10L11 6" stroke="#1F335A" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+            </svg>
+            Uses Flora design tokens (no hardcoded values)
           </li>
         </ul>
+
+        <div class="terminal" style="margin-top: 16px;">
+          <div class="terminal-header">
+            <div class="terminal-title">Plain language shortcuts</div>
+          </div>
+          <div class="terminal-body">
+            <code><span style="color: #888;">// Buttons</span><br>
+<span style="color: #ce9178;">"primary button"</span>, <span style="color: #ce9178;">"danger button"</span>, <span style="color: #ce9178;">"ghost button"</span>, <span style="color: #ce9178;">"small button"</span><br><br>
+<span style="color: #888;">// Components</span><br>
+<span style="color: #ce9178;">"data table"</span>, <span style="color: #ce9178;">"sortable column"</span>, <span style="color: #ce9178;">"dropdown menu"</span>, <span style="color: #ce9178;">"search input"</span><br><br>
+<span style="color: #888;">// States</span><br>
+<span style="color: #ce9178;">"error state"</span>, <span style="color: #ce9178;">"success message"</span>, <span style="color: #ce9178;">"modal dialog"</span><br><br>
+<span style="color: #888;">// Design tokens</span><br>
+<span style="color: #ce9178;">"Flora spacing"</span>, <span style="color: #ce9178;">"primary text color"</span>, <span style="color: #ce9178;">"light background"</span></code>
+          </div>
+        </div>
+      </div>
+
+      <div style="margin-top: 24px;">
+        <h3 style="font-size: 15px; font-weight: 600; color: var(--gray-darker); margin: 0 0 12px 0;">Use Figma MCP links</h3>
+        <p class="card-text">Link your Figma designs with <code>@figma URL</code> in your prompts. Cursor Agents get visual screenshots, design specifications, component structure, design tokens, and variables. The link updates automatically when designs change.</p>
+        <p class="card-text" style="margin-top: 16px;">This approach gives agents the design intent. How it should look and behave. They see accurate spacing, colors, layout, and typography. Perfect for building new components from scratch and ensuring visual fidelity.</p>
+
+        <div class="terminal" style="margin-top: 16px;">
+          <div class="terminal-header">
+            <div class="terminal-title">Example prompt</div>
+          </div>
+          <div class="terminal-body">
+            <code>Build this component: <span style="color: #4fc3f7;">@https://www.figma.com/design/abc123</span><br>Use components from our design system in <span style="color: #ce9178;">/src/components</span></code>
+          </div>
+        </div>
+      </div>
+
+      <div style="margin-top: 24px;">
+        <h3 style="font-size: 15px; font-weight: 600; color: var(--gray-darker); margin: 0 0 12px 0;">Skip copying JSX from Figma Dev Mode</h3>
+        <p class="card-text">Figma generates React code automatically. Sounds convenient. It's not. The code is generic and doesn't match your component library. It uses inline styles or non-standard patterns. It's a static snapshot that gets outdated immediately.</p>
+        <p class="card-text" style="margin-top: 16px;">Worse, Figma doesn't know your codebase conventions. It generates <code>&lt;div&gt;</code> soup instead of semantic HTML. It won't use your design system components. You'll refactor everything anyway. Skip it.</p>
+      </div>
+
+      <div style="margin-top: 24px;">
+        <h3 style="font-size: 15px; font-weight: 600; color: var(--gray-darker); margin: 0 0 12px 0;">Recommended workflow</h3>
+        <p class="card-text">Use Figma MCP links with GitHub access to your design system. This combination is powerful. The MCP link gives visual truth and design specs. GitHub access gives your actual component library. Agents map the design to your real components.</p>
+        <p class="card-text" style="margin-top: 16px;">The agent sees the visual design from Figma, references your actual components, and builds using your established patterns. It matches both the design and your codebase conventions. This produces production-quality components. Skip Figma-generated code. It's a distraction that leads agents down the wrong path.</p>
+      </div>
+
+      <div style="margin-top: 24px;">
+        <h3 style="font-size: 15px; font-weight: 600; color: var(--gray-darker); margin: 0 0 12px 0;">Design system packages</h3>
+        <p class="card-text">Garden and Flora live as npm packages in your project. The setup script installs them automatically. Flora is Zendesk's new design system. Garden v10 is the current production system. Both are available in every shell template.</p>
+
+        <div class="terminal" style="margin-top: 16px;">
+          <div class="terminal-header">
+            <div class="terminal-title">package.json</div>
+          </div>
+          <div class="terminal-body">
+            <code><span style="color: #ce9178;">"dependencies"</span><span style="color: #d4d4d4;">:</span> <span style="color: #d4d4d4;">{</span><br>
+  <span style="color: #ce9178;">"@zendesk-ui/react-components"</span><span style="color: #d4d4d4;">:</span> <span style="color: #ce9178;">"^0.0.1-alpha.1"</span><span style="color: #888;">,  // Flora (new design system)</span><br>
+  <span style="color: #ce9178;">"@zendeskgarden/react-components"</span><span style="color: #d4d4d4;">:</span> <span style="color: #ce9178;">"^10.0.0-next.0"</span><span style="color: #888;">,  // Garden v10</span><br>
+  <span style="color: #ce9178;">"@zendeskgarden/svg-icons"</span><span style="color: #d4d4d4;">:</span> <span style="color: #ce9178;">"^8.4.0"</span><span style="color: #888;">,  // Garden icons</span><br>
+  <span style="color: #ce9178;">"@zendesk-ui/assets"</span><span style="color: #d4d4d4;">:</span> <span style="color: #ce9178;">"^3.0.1"</span><span style="color: #888;">,  // Flora assets</span><br>
+  <span style="color: #ce9178;">"@zendesk-ui/navigation"</span><span style="color: #d4d4d4;">:</span> <span style="color: #ce9178;">"^1.11.1"</span>  <span style="color: #888;">// Flora navigation</span><br>
+<span style="color: #d4d4d4;">}</span></code>
+          </div>
+        </div>
+
+        <p class="card-text" style="margin-top: 16px;">Agents reference these packages directly when building components. No external lookups. No version mismatches. Everything you need is already installed.</p>
       </div>
     </div>
 
@@ -1137,33 +1300,72 @@ a:hover {
     </div>
   </section>
 
-  <!-- External Resources Section -->
-  <section class="section-content" id="resources">
+  <!-- Troubleshooting Section -->
+  <section class="section-content" id="troubleshooting">
     <div class="content-wrapper">
     <div class="content-header">
-      <div class="content-badge">LINKS</div>
-      <h1 class="content-title">External resources</h1>
-      <p class="content-description">Helpful links and documentation coming soon.</p>
+      <div class="content-badge">HELP</div>
+      <h1 class="content-title">Troubleshooting</h1>
+      <p class="content-description">Common issues and solutions for setting up and using Employee Service shells.</p>
     </div>
 
-    <div class="content-card">
-      <h2 class="card-title">Coming soon</h2>
-      <p class="card-text" style="margin-top: 16px;">This section will include:</p>
-      <ul style="list-style: disc; padding-left: 24px; margin-top: 16px; display: flex; flex-direction: column; gap: 8px;">
-        <li style="font-size: 17px; line-height: 1.7; color: var(--gray-dark);">
-          Cursor documentation and setup guides
-        </li>
-        <li style="font-size: 17px; line-height: 1.7; color: var(--gray-dark);">
-          Vibe coding tutorials
-        </li>
-        <li style="font-size: 17px; line-height: 1.7; color: var(--gray-dark);">
-          Flora design system resources
-        </li>
-        <li style="font-size: 17px; line-height: 1.7; color: var(--gray-dark);">
-          MCP server configuration examples
-        </li>
-      </ul>
-    </div>
+    <details id="npm-auth-error" class="troubleshooting-card" style="width: calc(100% + 80px); margin-left: -40px; border: 1px solid var(--gray-border); border-radius: 8px; overflow: hidden; margin-bottom: 16px; background: transparent;">
+      <summary style="padding: 24px 40px; cursor: pointer; display: flex; align-items: center; justify-content: space-between; font-size: 20px; font-weight: 600; color: var(--gray-text); user-select: none; list-style: none;">
+        <code style="font-size: 18px; font-weight: 500;">npm authentication error</code>
+        <svg width="20" height="20" viewBox="0 0 20 20" fill="none" xmlns="http://www.w3.org/2000/svg" style="flex-shrink: 0; stroke: var(--gray-text);">
+          <path d="M5 7.5L10 12.5L15 7.5" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+        </svg>
+      </summary>
+      <div class="troubleshooting-content" style="padding: 0 40px 32px 40px; max-width: 680px;">
+        <p class="card-text" style="margin-top: 32px;">If npm install fails with authentication errors, authenticate with Zendesk's npm registry. One-time setup per machine.</p>
+
+        <div style="margin-top: 48px;">
+          <div style="display: flex; gap: 16px; align-items: flex-start;">
+            <div style="flex-shrink: 0; width: 28px; height: 28px; background: var(--gray-light); color: var(--black); border-radius: 6px; display: flex; align-items: center; justify-content: center; font-size: 14px; font-weight: 600; font-family: var(--font-mono); border: 1px solid var(--gray-border);">1</div>
+            <div style="flex: 1;">
+              <h3 style="font-size: 17px; font-weight: 600; color: var(--black); margin: 0 0 12px 0;">Add registry to <code>~/.npmrc</code></h3>
+              <div class="terminal">
+                <div class="terminal-header">
+                  <div class="terminal-title">~/.npmrc</div>
+                </div>
+                <div class="terminal-body">
+                  <code><span style="color: #ce9178;">@zendesk:registry</span>=<span style="color: #4fc3f7;">https://zdrepo.jfrog.io/artifactory/api/npm/npm/</span><br>
+<span style="color: #ce9178;">@zendesk-ui:registry</span>=<span style="color: #4fc3f7;">https://zdrepo.jfrog.io/artifactory/api/npm/npm/</span></code>
+                </div>
+              </div>
+              <p class="card-text" style="margin-top: 16px;">Create this file in your home directory if it doesn't exist.</p>
+            </div>
+          </div>
+        </div>
+
+        <div style="margin-top: 48px;">
+          <div style="display: flex; gap: 16px; align-items: flex-start;">
+            <div style="flex-shrink: 0; width: 28px; height: 28px; background: var(--gray-light); color: var(--black); border-radius: 6px; display: flex; align-items: center; justify-content: center; font-size: 14px; font-weight: 600; font-family: var(--font-mono); border: 1px solid var(--gray-border);">2</div>
+            <div style="flex: 1;">
+              <h3 style="font-size: 17px; font-weight: 600; color: var(--black); margin: 0 0 12px 0;">Authenticate with Zendesk LDAP</h3>
+              <div class="terminal">
+                <div class="terminal-header">
+                  <div class="terminal-title">Terminal</div>
+                  <button class="terminal-copy-btn" onclick="copyTerminalCode(this, 'npm login --registry=https://zdrepo.jfrog.io/artifactory/api/npm/npm/ --scope=@zendesk\nnpm login --registry=https://zdrepo.jfrog.io/artifactory/api/npm/npm/ --scope=@zendesk-ui')">
+                    <svg width="12" height="12" viewBox="0 0 12 12" fill="none" xmlns="http://www.w3.org/2000/svg">
+                      <rect x="2" y="2" width="7" height="7" rx="1" stroke="currentColor" stroke-width="1"/>
+                      <path d="M4 1H10C10.5523 1 11 1.44772 11 2V8" stroke="currentColor" stroke-width="1"/>
+                    </svg>
+                    Copy
+                  </button>
+                </div>
+                <div class="terminal-body">
+                  <div><span class="terminal-prompt">$</span><code>npm login --registry=https://zdrepo.jfrog.io/artifactory/api/npm/npm/ --scope=@zendesk</code></div>
+                  <div style="margin-top: 8px;"><span class="terminal-prompt">$</span><code>npm login --registry=https://zdrepo.jfrog.io/artifactory/api/npm/npm/ --scope=@zendesk-ui</code></div>
+                </div>
+              </div>
+              <p class="card-text" style="margin-top: 16px;">Run the setup script again once authenticated.</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </details>
+
     </div>
   </section>
 
