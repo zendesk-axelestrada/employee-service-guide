@@ -310,8 +310,6 @@ code {
   font-weight: 500;
   border: 1px solid var(--gray-border);
   transition: all 0.15s ease;
-  cursor: pointer;
-  position: relative;
 }
 
 code:hover {
@@ -464,38 +462,6 @@ a:hover {
   margin-right: 8px;
 }
 
-code:active {
-  transform: scale(0.98);
-}
-
-code::after {
-  content: attr(data-tooltip);
-  position: absolute;
-  bottom: calc(100% + 8px);
-  left: 50%;
-  transform: translateX(-50%) scale(0.95);
-  background: #2f3130;
-  color: white;
-  padding: 6px 10px;
-  border-radius: 6px;
-  font-size: 11px;
-  white-space: nowrap;
-  opacity: 0;
-  pointer-events: none;
-  transition: opacity 0.15s ease, transform 0.15s ease;
-  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.15);
-}
-
-code:hover::after {
-  opacity: 1;
-  transform: translateX(-50%) scale(1);
-}
-
-code.copied::after {
-  content: 'Copied!' !important;
-  background: #2e7d32;
-  color: white;
-}
 
 /* Responsive */
 @media (max-width: 1200px) {
@@ -608,21 +574,21 @@ code.copied::after {
   <section class="section-content active" id="introduction">
     <div class="content-wrapper">
     <div class="content-header">
-      <div class="content-badge">Introduction</div>
+      <div class="content-badge">INTRODUCTION</div>
       <h1 class="content-title">Employee Service Design Kit</h1>
-      <p class="content-description">Ready-to-use shell templates for Employee Service products. Start prototyping directly in Cursor or your favorite AI-powered editor. Iterate fast, share with your team, and hand off production-ready code to engineers.</p>
+      <p class="content-description">Ready-to-use shell templates for Employee Service products. Start prototyping in Cursor or your favorite tool. Iterate fast, share with your team, and hand off clean code to engineers.</p>
     </div>
 
     <div class="content-card">
       <h2 class="card-title">Why use Employee Service shells?</h2>
-      <p class="card-text">Full repositories contain hundreds of thousands of lines of code. This creates context overload for AI tools—they lose focus and produce inconsistent results. You waste time managing context, fixing errors, and burning through tokens inefficiently.</p>
-      <p class="card-text">Employee Service shells give you just what you need: a complete Zendesk navigation framework. Focus entirely on prototyping your feature. The shell includes the header with product tray, sidebar navigation, and all underlying structure. Build fast, test immediately, and gather feedback in real time.</p>
+      <p class="card-text">Full repositories contain hundreds of thousands of lines of code. This creates context overload for AI tools. They lose focus and produce inconsistent results. You waste time managing context, fixing errors, burning through tokens inefficiently, and waiting on slow AI response times.</p>
+      <p class="card-text">Employee Service shells give you exactly what you need: a complete Zendesk navigation framework. Focus on prototyping your feature. The shell includes the header with product tray, sidebar navigation, and all underlying structure. Build fast, test immediately, and share for feedback.</p>
     </div>
 
     <div class="content-card">
       <h2 class="card-title">What is the shell?</h2>
-      <p class="card-text">The shell is the complete Zendesk navigation framework—everything except your feature. It includes the header, sidebar, and structure built with Flora or Garden, depending on the product area you're working in.</p>
-      <p class="card-text">Your content goes in the <code>&lt;Main&gt;</code> area. The header, sidebar, and navigation stay fixed. Build your tables, forms, and workflows inside Main. The shell handles everything else.</p>
+      <p class="card-text">The shell is the complete Zendesk navigation framework. Everything except your feature. It includes the header, sidebar, and structure built with Flora or Garden, depending on the product area.</p>
+      <p class="card-text">Your content goes in the <code>&lt;Main&gt;</code> area. The header, sidebar, and navigation stay fixed. Build your tables, forms, and workflows inside Main. The shell handles the rest.</p>
     </div>
     </div>
 
@@ -646,19 +612,19 @@ code.copied::after {
 
     <div class="content-card">
       <h2 class="card-title">Benefits</h2>
-      <p class="card-text">Employee Service shells provide:</p>
+      <p class="card-text">Employee Service shells give you:</p>
       <ul style="list-style: disc; padding-left: 24px; margin-top: 16px; display: flex; flex-direction: column; gap: 8px;">
         <li style="font-size: 17px; line-height: 1.7; color: var(--gray-dark);">
           <strong>Speed:</strong> Start prototyping in minutes.
         </li>
         <li style="font-size: 17px; line-height: 1.7; color: var(--gray-dark);">
-          <strong>Consistency:</strong> Every shell matches Zendesk's production interface.
+          <strong>Consistency:</strong> Every shell matches Zendesk's production UI.
         </li>
         <li style="font-size: 17px; line-height: 1.7; color: var(--gray-dark);">
-          <strong>AI-friendly:</strong> Optimized codebases save tokens and time.
+          <strong>AI-friendly:</strong> Optimized codebases maximize prompt efficiency, saving tokens, cost, and time.
         </li>
         <li style="font-size: 17px; line-height: 1.7; color: var(--gray-dark);">
-          <strong>Production-ready:</strong> Clean, accessible code ready to hand off.
+          <strong>Production-ready:</strong> Clean, accessible code that's ready to hand off.
         </li>
         <li style="font-size: 17px; line-height: 1.7; color: var(--gray-dark);">
           <strong>Shareable:</strong> Host prototypes on GitHub Pages.
@@ -668,7 +634,7 @@ code.copied::after {
 
     <div class="content-card">
       <h2 class="card-title">Who can use this</h2>
-      <p class="card-text">Employee Service shells are for anyone who needs to prototype or communicate product ideas:</p>
+      <p class="card-text">Use Employee Service shells to prototype or communicate product ideas:</p>
       <ul style="list-style: disc; padding-left: 24px; margin-top: 16px; display: flex; flex-direction: column; gap: 8px;">
         <li style="font-size: 17px; line-height: 1.7; color: var(--gray-dark);">
           <strong>Designers:</strong> Prototype features, test flows, and validate designs.
@@ -688,9 +654,9 @@ code.copied::after {
   <section class="section-content" id="getting-started">
     <div class="content-wrapper">
     <div class="content-header">
-      <div class="content-badge">Setup</div>
+      <div class="content-badge">SETUP</div>
       <h1 class="content-title">Getting started</h1>
-      <p class="content-description">Set up your shell template and start prototyping in 5 steps. Choose between ITAM or SaaS Management templates. No coding experience required.</p>
+      <p class="content-description">Set up your shell template and start prototyping in 5 steps. Choose a template and get started. No coding experience required.</p>
     </div>
 
     <div class="content-card">
@@ -708,7 +674,7 @@ code.copied::after {
             </div>
           </div>
           <span style="font-size: 17px; line-height: 1.7; color: var(--gray-dark);">
-            <strong><a href="https://nodejs.org/" target="_blank">Node.js</a>:</strong> Version 18 or higher (supported by Garden).
+            <strong><a href="https://nodejs.org/" target="_blank">Node.js</a>:</strong> Version 18. This is the version Garden supports.
           </span>
         </label>
         <label style="display: flex; align-items: flex-start; gap: 12px; cursor: pointer;">
@@ -722,7 +688,7 @@ code.copied::after {
             </div>
           </div>
           <span style="font-size: 17px; line-height: 1.7; color: var(--gray-dark);">
-            <strong>Zendesk GitHub access:</strong> Essential for this workflow.
+            <strong>Zendesk GitHub access:</strong> Required to access internal repositories.
           </span>
         </label>
         <label style="display: flex; align-items: flex-start; gap: 12px; cursor: pointer;">
@@ -750,7 +716,7 @@ code.copied::after {
             </div>
           </div>
           <span style="font-size: 17px; line-height: 1.7; color: var(--gray-dark);">
-            <strong><a href="https://www.cursor.com/download" target="_blank">Code editor</a>:</strong> Cursor recommended, or use VS Code.
+            <strong><a href="https://www.cursor.com/download" target="_blank">Code editor</a>:</strong> Use Cursor (recommended) or VS Code.
           </span>
         </label>
         <label style="display: flex; align-items: flex-start; gap: 12px; cursor: pointer;">
@@ -764,7 +730,7 @@ code.copied::after {
             </div>
           </div>
           <span style="font-size: 17px; line-height: 1.7; color: var(--gray-dark);">
-            <strong>MCP servers:</strong> Connected to both Cursor and Claude Code for enhanced capabilities.
+            <strong><a href="https://mcp-gateway.zende.sk/" target="_blank">MCP servers</a>:</strong> Connect to Cursor and Claude Code for enhanced AI capabilities.
           </span>
         </label>
         <label style="display: flex; align-items: flex-start; gap: 12px; cursor: pointer;">
@@ -778,7 +744,7 @@ code.copied::after {
             </div>
           </div>
           <span style="font-size: 17px; line-height: 1.7; color: var(--gray-dark);">
-            <strong>Terminal access:</strong> Basic familiarity with command line operations.
+            <strong>Terminal basics:</strong> Basic understanding of command line operations.
           </span>
         </label>
       </div>
@@ -802,7 +768,7 @@ code.copied::after {
       <div style="flex: 1;">
         <div style="display: flex; align-items: center; gap: 8px; margin-bottom: 12px;">
           <h2 class="card-title" style="margin-bottom: 0;">Clone the design kit</h2>
-          <span style="display: inline-flex; align-items: center; justify-content: center; padding: 2px 8px; font-size: 12px; font-weight: 600; font-family: var(--font-sans); line-height: 16px; text-align: center; background: #F7E6F1; color: #5A0D51; border-radius: 99px; gap: 4px;">ONE TIME ONLY</span>
+          <span style="display: inline-flex; align-items: center; justify-content: center; padding: 2px 8px; font-size: 12px; font-weight: 600; font-family: var(--font-sans); line-height: 16px; text-align: center; background: #F7E6F1; color: #5A0D51; border-radius: 4px; gap: 4px;">ONE TIME ONLY</span>
         </div>
         <div class="terminal">
           <div class="terminal-header">
@@ -821,6 +787,32 @@ code.copied::after {
             <div style="margin-top: 8px;"><span class="terminal-prompt">$</span><code>git clone git@github.com:zendesk/employee-service-design-kit.git</code></div>
           </div>
         </div>
+        <p class="card-text" style="margin-top: 16px;">Open Terminal (press <code>Cmd + Space</code>, type "Terminal", hit Enter), copy the script above, paste it in, and press Enter.</p>
+        <p class="card-text" style="margin-top: 16px;">This creates your workspace folders and downloads the design kit. You'll use this folder structure for every prototype.</p>
+      </div>
+    </div>
+
+    <div class="content-card" style="display: flex; gap: 20px; align-items: flex-start;">
+      <div style="flex-shrink: 0; width: 32px; height: 32px;"></div>
+      <div style="flex: 1;">
+        <h2 class="card-title" style="margin-bottom: 12px;">Already cloned the design kit?</h2>
+        <div class="terminal">
+          <div class="terminal-header">
+            <div class="terminal-title">Terminal</div>
+            <button class="terminal-copy-btn" onclick="copyTerminalCode(this, 'cd ~/zendesk/design-kits/employee-service-design-kit\ngit pull')">
+              <svg width="12" height="12" viewBox="0 0 12 12" fill="none" xmlns="http://www.w3.org/2000/svg">
+                <rect x="2" y="2" width="7" height="7" rx="1" stroke="currentColor" stroke-width="1"/>
+                <path d="M4 1H10C10.5523 1 11 1.44772 11 2V8" stroke="currentColor" stroke-width="1"/>
+              </svg>
+              Copy
+            </button>
+          </div>
+          <div class="terminal-body">
+            <div><span class="terminal-prompt">$</span><code>cd ~/zendesk/design-kits/employee-service-design-kit</code></div>
+            <div style="margin-top: 8px;"><span class="terminal-prompt">$</span><code>git pull</code></div>
+          </div>
+        </div>
+        <p class="card-text" style="margin-top: 16px;">Run these commands to get the latest templates and scripts.</p>
       </div>
     </div>
 
@@ -843,7 +835,8 @@ code.copied::after {
             <div><span class="terminal-prompt">$</span><code>mkdir ~/zendesk/prototypes/my-new-project</code></div>
           </div>
         </div>
-        <p class="card-text" style="margin-top: 16px;">Each prototype lives in its own folder.</p>
+        <p class="card-text" style="margin-top: 16px;">Skip Terminal if you want. Just create the folder in Finder. Go to <code>zendesk/prototypes</code> and add your project folder.</p>
+        <p class="card-text" style="margin-top: 16px;">Each prototype gets its own folder.</p>
       </div>
     </div>
 
@@ -852,9 +845,9 @@ code.copied::after {
       <div style="flex: 1;">
         <h2 class="card-title" style="margin-bottom: 12px;">Open in Cursor</h2>
         <ol style="list-style: decimal; padding-left: 24px; margin-top: 16px; display: flex; flex-direction: column; gap: 8px;">
-          <li style="font-size: 17px; line-height: 1.7; color: var(--gray-dark);">Click <strong>File → Open Folder</strong></li>
+          <li style="font-size: 17px; line-height: 1.7; color: var(--gray-dark);">Select <strong>File</strong> → <strong>Open Folder</strong> or press <code>Cmd + O</code></li>
           <li style="font-size: 17px; line-height: 1.7; color: var(--gray-dark);">Navigate to <code>~/zendesk/prototypes/my-new-project</code></li>
-          <li style="font-size: 17px; line-height: 1.7; color: var(--gray-dark);">Click <strong>Open</strong></li>
+          <li style="font-size: 17px; line-height: 1.7; color: var(--gray-dark);">Select <strong>Open</strong></li>
         </ol>
       </div>
     </div>
@@ -863,49 +856,23 @@ code.copied::after {
       <div style="flex-shrink: 0; width: 32px; height: 32px; background: var(--gray-light); color: var(--black); border-radius: 6px; display: flex; align-items: center; justify-content: center; font-size: 15px; font-weight: 600; font-family: var(--font-mono); border: 1px solid var(--gray-border);">4</div>
       <div style="flex: 1;">
         <h2 class="card-title" style="margin-bottom: 12px;">Run the setup script</h2>
-        <p class="card-text">Choose your template. The design kit includes two options:</p>
-
-        <div style="margin-top: 20px; display: flex; flex-direction: column; gap: 16px;">
-          <div>
-            <h3 style="font-size: 15px; font-weight: 600; color: var(--gray-darker); margin: 0 0 8px 0;">ITAM prototypes:</h3>
-            <div class="terminal">
-              <div class="terminal-header">
-                <div class="terminal-title">Terminal</div>
-                <button class="terminal-copy-btn" onclick="copyTerminalCode(this, '~/zendesk/design-kits/employee-service-design-kit/scripts/setup-here.sh itam-shell')">
-                  <svg width="12" height="12" viewBox="0 0 12 12" fill="none" xmlns="http://www.w3.org/2000/svg">
-                    <rect x="2" y="2" width="7" height="7" rx="1" stroke="currentColor" stroke-width="1"/>
-                    <path d="M4 1H10C10.5523 1 11 1.44772 11 2V8" stroke="currentColor" stroke-width="1"/>
-                  </svg>
-                  Copy
-                </button>
-              </div>
-              <div class="terminal-body">
-                <div><span class="terminal-prompt">$</span><code>~/zendesk/design-kits/employee-service-design-kit/scripts/setup-here.sh itam-shell</code></div>
-              </div>
-            </div>
+        <div class="terminal">
+          <div class="terminal-header">
+            <div class="terminal-title">Terminal</div>
+            <button class="terminal-copy-btn" onclick="copyTerminalCode(this, '~/zendesk/design-kits/employee-service-design-kit/scripts/setup-here.sh')">
+              <svg width="12" height="12" viewBox="0 0 12 12" fill="none" xmlns="http://www.w3.org/2000/svg">
+                <rect x="2" y="2" width="7" height="7" rx="1" stroke="currentColor" stroke-width="1"/>
+                <path d="M4 1H10C10.5523 1 11 1.44772 11 2V8" stroke="currentColor" stroke-width="1"/>
+              </svg>
+              Copy
+            </button>
           </div>
-
-          <div>
-            <h3 style="font-size: 15px; font-weight: 600; color: var(--gray-darker); margin: 0 0 8px 0;">SaaS Management prototypes:</h3>
-            <div class="terminal">
-              <div class="terminal-header">
-                <div class="terminal-title">Terminal</div>
-                <button class="terminal-copy-btn" onclick="copyTerminalCode(this, '~/zendesk/design-kits/employee-service-design-kit/scripts/setup-here.sh saas-shell')">
-                  <svg width="12" height="12" viewBox="0 0 12 12" fill="none" xmlns="http://www.w3.org/2000/svg">
-                    <rect x="2" y="2" width="7" height="7" rx="1" stroke="currentColor" stroke-width="1"/>
-                    <path d="M4 1H10C10.5523 1 11 1.44772 11 2V8" stroke="currentColor" stroke-width="1"/>
-                  </svg>
-                  Copy
-                </button>
-              </div>
-              <div class="terminal-body">
-                <div><span class="terminal-prompt">$</span><code>~/zendesk/design-kits/employee-service-design-kit/scripts/setup-here.sh saas-shell</code></div>
-              </div>
-            </div>
+          <div class="terminal-body">
+            <div><span class="terminal-prompt">$</span><code>~/zendesk/design-kits/employee-service-design-kit/scripts/setup-here.sh</code></div>
           </div>
         </div>
-
-        <p class="card-text" style="margin-top: 16px;">Both templates include Flora design system, accessibility features, and i18n support. Takes about 30 seconds to complete.</p>
+        <p class="card-text" style="margin-top: 16px;">Switch to Cursor's integrated terminal now. Press <code>Ctrl + `</code> (backtick) or select <strong>Terminal</strong> → <strong>New Terminal</strong>.</p>
+        <p class="card-text" style="margin-top: 16px;">Copy the script, paste it in Terminal, and hit Enter. Pick your template from the wizard. This copies template files, installs dependencies, and sets up git. Takes about 30 seconds.</p>
       </div>
     </div>
 
@@ -913,7 +880,6 @@ code.copied::after {
       <div style="flex-shrink: 0; width: 32px; height: 32px; background: var(--gray-light); color: var(--black); border-radius: 6px; display: flex; align-items: center; justify-content: center; font-size: 15px; font-weight: 600; font-family: var(--font-mono); border: 1px solid var(--gray-border);">5</div>
       <div style="flex: 1;">
         <h2 class="card-title" style="margin-bottom: 12px;">Start the dev server</h2>
-        <p class="card-text">Launch the local web server. It watches for changes and auto-refreshes:</p>
         <div class="terminal">
           <div class="terminal-header">
             <div class="terminal-title">Terminal</div>
@@ -927,29 +893,20 @@ code.copied::after {
           </div>
           <div class="terminal-body">
             <div><span class="terminal-prompt">$</span><code>npm run dev</code></div>
+            <div style="margin-top: 12px; color: #888;">
+              <div>VITE v8.1.0  ready in 245 ms</div>
+              <div style="margin-top: 4px;">➜  Local:   <span style="color: #4fc3f7;">http://localhost:5173/</span></div>
+              <div style="margin-top: 4px;">➜  Network: use --host to expose</div>
+            </div>
           </div>
         </div>
+        <p class="card-text" style="margin-top: 16px;">The dev server starts and shows a local URL (something like <code>http://localhost:5173/</code>). Open it in Cursor's browser.</p>
+        <p class="card-text" style="margin-top: 16px;">Changes show up automatically when Cursor Agents finish. No refresh needed.</p>
       </div>
     </div>
 
-    <!-- Video Demo Placeholder -->
-    <div style="max-width: 1350px; width: calc(100% - 240px); margin: 80px auto 200px auto;">
-      <div style="background: #f0f0f0; padding: 32px; border-radius: 12px;">
-        <div style="position: relative; width: 100%; padding-bottom: 53.56%; background: #f0f0f0; border-radius: 8px; display: flex; align-items: center; justify-content: center;">
-          <div style="position: absolute; top: 50%; left: 50%; transform: translate(-50%, -50%); text-align: center;">
-            <div style="color: var(--gray-mid); font-size: 15px; font-weight: 600; text-transform: uppercase; letter-spacing: 0.05em; margin-bottom: 8px;">Coming soon</div>
-            <div style="color: var(--gray-dark); font-size: 20px; font-weight: 600;">Video demo</div>
-          </div>
-        </div>
-      </div>
-    </div>
 
-    <div class="content-card">
-      <h2 class="card-title">Using Cursor terminal</h2>
-      <p class="card-text">You can also access the terminal directly within Cursor by pressing <code>Ctrl + ~</code> (backtick key) or clicking <strong>Terminal → New Terminal</strong>. This terminal is already pointing to your project folder.</p>
-    </div>
-
-    <div class="content-card">
+    <div class="content-card" id="youre-done-section" style="margin: 120px 0;">
       <h2 class="card-title">You're done!</h2>
       <p class="card-text">Your prototype is now running. Everything you see is:</p>
       <ul style="list-style: none; padding-left: 0; margin-top: 16px; display: flex; flex-direction: column; gap: 8px;">
@@ -958,14 +915,14 @@ code.copied::after {
             <circle cx="8" cy="8" r="8" fill="#E4EAF6"/>
             <path d="M5 8L7 10L11 6" stroke="#1F335A" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
           </svg>
-          Using Flora and Garden design systems
+          Using Flora and Garden libraries
         </li>
         <li style="font-size: 17px; line-height: 1.7; color: var(--gray-dark);">
           <svg width="16" height="16" viewBox="0 0 16 16" fill="none" xmlns="http://www.w3.org/2000/svg" style="display: inline-block; margin-right: 8px; vertical-align: text-bottom;">
             <circle cx="8" cy="8" r="8" fill="#E4EAF6"/>
             <path d="M5 8L7 10L11 6" stroke="#1F335A" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
           </svg>
-          Working as a production-ready application
+          Built to match Zendesk's production UI
         </li>
         <li style="font-size: 17px; line-height: 1.7; color: var(--gray-dark);">
           <svg width="16" height="16" viewBox="0 0 16 16" fill="none" xmlns="http://www.w3.org/2000/svg" style="display: inline-block; margin-right: 8px; vertical-align: text-bottom;">
@@ -978,42 +935,17 @@ code.copied::after {
     </div>
 
     <div class="content-card">
-      <h2 class="card-title">Building with AI</h2>
-      <p class="card-text">The setup runs entirely in Cursor — no context switching between tools.</p>
-
-      <div style="margin-top: 24px;">
-        <h3 style="font-size: 15px; font-weight: 600; color: var(--gray-darker); margin: 0 0 12px 0;">Two AI tools, one editor:</h3>
-        <ul style="list-style: disc; padding-left: 24px; display: flex; flex-direction: column; gap: 12px;">
-          <li style="font-size: 17px; line-height: 1.7; color: var(--gray-dark);">
-            <strong>Cursor Agents:</strong> Handles all UI work. Reads Figma components via MCP, understands Flora patterns, and builds what you describe. Perfect for styling, layouts, and visual tweaks with instant side-by-side diffs.
-          </li>
-          <li style="font-size: 17px; line-height: 1.7; color: var(--gray-dark);">
-            <strong>Claude Code (in Cursor terminal):</strong> Takes complex tasks off your hands. Generates mock data, refactors state management, searches repos, and connects to external tools via MCP — all autonomously.
-          </li>
-        </ul>
-      </div>
-
-      <div style="margin-top: 24px;">
-        <h3 style="font-size: 15px; font-weight: 600; color: var(--gray-darker); margin: 0 0 12px 0;">Model Context Protocol powers both:</h3>
-        <ul style="list-style: disc; padding-left: 24px; display: flex; flex-direction: column; gap: 12px;">
-          <li style="font-size: 17px; line-height: 1.7; color: var(--gray-dark);">
-            <strong>Figma MCP:</strong> Both tools pull design tokens, variables, and auto-layout directly from Figma. No pixel guessing. Claude Code can even push rendered UI back as editable Figma layers to keep design files synced.
-          </li>
-          <li style="font-size: 17px; line-height: 1.7; color: var(--gray-dark);">
-            <strong>GitHub MCP:</strong> Branch creation and PR staging happen natively without switching apps.
-          </li>
-        </ul>
-      </div>
-
-      <p class="card-text" style="margin-top: 24px;">Result: Cursor Agents perfects the look, Claude Code handles the logic, and MCP keeps code and design in sync. Prototyping that used to take hours now takes minutes.</p>
+      <h2 class="card-title">Working with Cursor Agents and Claude Code</h2>
+      <p class="card-text">Use Cursor Agents and Claude Code together in one window. Cursor Agents build UI and interactions. Claude Code handles complex workflows, generates mock data, refactors code, and connects to external tools. Cursor Agents builds what you see, and Claude Code plans how it works.</p>
     </div>
+
     </div>
   </section>
 
   <!-- Skills Section -->
   <section class="section-content" id="skills">
     <div class="content-header">
-      <div class="content-badge">tools</div>
+      <div class="content-badge">TOOLS</div>
       <h1 class="content-title">Skills</h1>
       <p class="content-description">Placeholder for skills content.</p>
     </div>
@@ -1028,7 +960,7 @@ code.copied::after {
   <section class="section-content" id="workflow">
     <div class="content-wrapper">
     <div class="content-header">
-      <div class="content-badge">Process</div>
+      <div class="content-badge">PROCESS</div>
       <h1 class="content-title">Workflow</h1>
       <p class="content-description">Build prototypes with natural language — no coding required.</p>
     </div>
@@ -1209,7 +1141,7 @@ code.copied::after {
   <section class="section-content" id="resources">
     <div class="content-wrapper">
     <div class="content-header">
-      <div class="content-badge">Links</div>
+      <div class="content-badge">LINKS</div>
       <h1 class="content-title">External resources</h1>
       <p class="content-description">Helpful links and documentation coming soon.</p>
     </div>
@@ -1239,7 +1171,7 @@ code.copied::after {
   <section class="section-content" id="contact">
     <div class="content-wrapper">
     <div class="content-header">
-      <div class="content-badge">Get in touch</div>
+      <div class="content-badge">GET IN TOUCH</div>
       <h1 class="content-title">Contact</h1>
       <p class="content-description">Questions or feedback? Reach out anytime.</p>
     </div>
@@ -1386,51 +1318,7 @@ document.getElementById('logo-home').addEventListener('click', () => {
   }
 });
 
-// Click-to-copy for code snippets
-document.addEventListener('click', (e) => {
-  const code = e.target.closest('code');
-  if (!code) return;
-
-  const text = code.textContent;
-
-  // Copy to clipboard
-  navigator.clipboard.writeText(text).then(() => {
-    // Show copied tooltip only
-    code.setAttribute('data-tooltip', 'Copied!');
-    code.classList.add('copied');
-
-    // Remove after 1 second
-    setTimeout(() => {
-      code.classList.remove('copied');
-      code.setAttribute('data-tooltip', 'Click to copy');
-    }, 1000);
-  }).catch(err => {
-    console.error('Failed to copy:', err);
-  });
-});
-
-// Set initial tooltip text for all code elements
-document.querySelectorAll('code').forEach(code => {
-  code.setAttribute('data-tooltip', 'Click to copy');
-});
-
-// Re-add tooltip for dynamically added code elements
-const observer = new MutationObserver((mutations) => {
-  mutations.forEach((mutation) => {
-    mutation.addedNodes.forEach((node) => {
-      if (node.nodeType === 1) {
-        const codes = node.tagName === 'CODE' ? [node] : node.querySelectorAll('code');
-        codes.forEach(code => {
-          if (!code.hasAttribute('data-tooltip')) {
-            code.setAttribute('data-tooltip', 'Click to copy');
-          }
-        });
-      }
-    });
-  });
-});
-
-observer.observe(document.body, { childList: true, subtree: true });
+// Click-to-copy disabled for inline code snippets (only works in terminal windows via copy button)
 
 // Terminal copy button function
 function copyTerminalCode(button, text) {
@@ -1487,6 +1375,75 @@ const sectionObserver = new MutationObserver((mutations) => {
 });
 
 sectionObserver.observe(document.body, { childList: true, subtree: true });
+
+// Confetti animation for "You're done!" section
+function createConfetti() {
+  const colors = ['#E4EAF6', '#1F335A', '#5d3eed', '#4fc3f7', '#f3f0ff'];
+  const confettiCount = 50;
+  const confettiContainer = document.createElement('div');
+  confettiContainer.style.position = 'fixed';
+  confettiContainer.style.top = '0';
+  confettiContainer.style.left = '0';
+  confettiContainer.style.width = '100%';
+  confettiContainer.style.height = '100%';
+  confettiContainer.style.pointerEvents = 'none';
+  confettiContainer.style.zIndex = '9999';
+  document.body.appendChild(confettiContainer);
+
+  for (let i = 0; i < confettiCount; i++) {
+    const confetti = document.createElement('div');
+    confetti.style.position = 'absolute';
+    confetti.style.width = Math.random() * 10 + 5 + 'px';
+    confetti.style.height = Math.random() * 10 + 5 + 'px';
+    confetti.style.backgroundColor = colors[Math.floor(Math.random() * colors.length)];
+    confetti.style.left = Math.random() * 100 + '%';
+    confetti.style.top = '-10px';
+    confetti.style.opacity = '1';
+    confetti.style.borderRadius = Math.random() > 0.5 ? '50%' : '0';
+    confetti.style.transform = `rotate(${Math.random() * 360}deg)`;
+    confettiContainer.appendChild(confetti);
+
+    const duration = Math.random() * 2 + 2;
+    const delay = Math.random() * 0.5;
+    const drift = (Math.random() - 0.5) * 200;
+
+    confetti.animate([
+      {
+        transform: `translateY(0) translateX(0) rotate(0deg)`,
+        opacity: 1
+      },
+      {
+        transform: `translateY(${window.innerHeight + 20}px) translateX(${drift}px) rotate(${Math.random() * 720}deg)`,
+        opacity: 0
+      }
+    ], {
+      duration: duration * 1000,
+      delay: delay * 1000,
+      easing: 'cubic-bezier(0.25, 0.46, 0.45, 0.94)'
+    });
+  }
+
+  setTimeout(() => {
+    confettiContainer.remove();
+  }, 4000);
+}
+
+// Trigger confetti when "You're done!" section becomes visible
+let confettiTriggered = false;
+const youreDoneObserver = new IntersectionObserver((entries) => {
+  entries.forEach(entry => {
+    if (entry.isIntersecting && !confettiTriggered) {
+      confettiTriggered = true;
+      createConfetti();
+      youreDoneObserver.disconnect();
+    }
+  });
+}, { threshold: 0.5 });
+
+const youreDoneSection = document.getElementById('youre-done-section');
+if (youreDoneSection) {
+  youreDoneObserver.observe(youreDoneSection);
+}
 
 </script>
 
