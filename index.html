@@ -586,6 +586,83 @@ a:hover {
     opacity: 1;
   }
 }
+
+/* Skill card sub-section headings — body-size, darker weight/color sets them apart */
+.skill-heading {
+  font-size: 17px;
+  font-weight: 700;
+  color: var(--black);
+  margin: 48px 0 8px 0;
+}
+
+/* Skill editor tabs (Claude Code / Cursor) */
+.skill-tabs {
+  display: flex;
+  gap: 4px;
+  margin-top: 12px;
+  border-bottom: 1px solid var(--gray-border);
+}
+
+.skill-tab {
+  background: transparent;
+  border: none;
+  border-bottom: 2px solid transparent;
+  color: var(--gray-text);
+  padding: 8px 14px;
+  font-family: var(--font-mono);
+  font-size: 13px;
+  font-weight: 500;
+  cursor: pointer;
+  transition: all 0.2s ease;
+  margin-bottom: -1px;
+}
+
+.skill-tab:hover {
+  color: var(--black);
+  background: var(--gray-light);
+  border-radius: 4px 4px 0 0;
+}
+
+.skill-tab.active {
+  color: var(--black);
+  border-bottom-color: var(--black);
+}
+
+.skill-tab-panel {
+  display: none;
+}
+
+.skill-tab-panel.active {
+  display: block;
+}
+
+/* Skill placeholder / data tables */
+.skill-table {
+  width: 100%;
+  border-collapse: collapse;
+  margin-top: 16px;
+  font-size: 14px;
+}
+
+.skill-table th,
+.skill-table td {
+  text-align: left;
+  padding: 10px 14px;
+  border: 1px solid var(--gray-border);
+  vertical-align: top;
+  color: var(--gray-dark);
+}
+
+.skill-table th {
+  background: var(--gray-sidebar);
+  color: var(--black);
+  font-weight: 600;
+  font-size: 13px;
+}
+
+.skill-table td code {
+  font-size: 12px;
+}
 </style>
 </head>
 <body>
@@ -603,9 +680,9 @@ a:hover {
       Workflow
       <span class="nav-badge wip">WIP</span>
     </a>
-    <a class="nav-item" style="opacity: 0.5; cursor: not-allowed; pointer-events: none;">
+    <a class="nav-item" data-section="skills">
       Skills
-      <span class="nav-badge">Soon</span>
+      <span class="nav-badge wip">WIP</span>
     </a>
     <a class="nav-item" data-section="troubleshooting">
       Troubleshooting
@@ -993,15 +1070,216 @@ a:hover {
 
   <!-- Skills Section -->
   <section class="section-content" id="skills">
+    <div class="content-wrapper">
     <div class="content-header">
-      <div class="content-badge">TOOLS</div>
+      <div class="content-badge">SKILLS</div>
       <h1 class="content-title">Skills</h1>
-      <p class="content-description">Placeholder for skills content.</p>
+      <p class="content-description">Skills are commands you run inside your editor. Type <code>/name</code> in Claude Code or <code>@name</code> in Cursor. They automate parts of your design-to-development workflow. Every prototype includes them automatically. Setup copies them in for you.</p>
     </div>
 
-    <div class="content-card">
-      <h2 class="card-title">Skills placeholder</h2>
-      <p class="card-text">Content will go here.</p>
+    <!-- Skill card: /localize -->
+    <details class="troubleshooting-card" style="width: calc(100% + 80px); margin-left: -40px; border: 1px solid var(--gray-border); border-radius: 8px; overflow: hidden; margin-bottom: 16px; background: transparent;">
+      <summary style="padding: 20px 40px; cursor: pointer; display: flex; align-items: center; justify-content: space-between; font-size: 15px; font-weight: 600; color: var(--gray-text); user-select: none; list-style: none;">
+        <code style="font-size: 14px; font-weight: 500;">localize</code>
+        <svg width="16" height="16" viewBox="0 0 20 20" fill="none" xmlns="http://www.w3.org/2000/svg" style="flex-shrink: 0; stroke: var(--gray-text);">
+          <path d="M5 7.5L10 12.5L15 7.5" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+        </svg>
+      </summary>
+      <div class="troubleshooting-content" style="padding: 0 40px 32px 40px; max-width: 680px;">
+        <h3 class="skill-heading">What it does</h3>
+        <p class="card-text">This skill prepares the final text of your prototype for the Zendesk translation process. You choose exactly which strings need translation. That means only your new text, not the template. It creates a Rosetta-compliant <code>config/locales/translations/en-us.yml</code> file that an engineer can drop into their repo.</p>
+
+        <h3 class="skill-heading">When to use</h3>
+        <p class="card-text">Run this once your content is final. That usually means you've explored options, shared with your team, iterated with engineering and product, and reviewed with content design. You can run it any time and update later, so there's no wrong moment.</p>
+
+        <h3 class="skill-heading">Invoke it</h3>
+        <div class="skill-tabs-group">
+          <div class="skill-tabs">
+            <button class="skill-tab active" onclick="switchSkillTab(this, 'claude')">Claude Code</button>
+            <button class="skill-tab" onclick="switchSkillTab(this, 'cursor')">Cursor</button>
+          </div>
+          <div class="skill-tab-panel active" data-tab="claude">
+            <div class="terminal">
+              <div class="terminal-header">
+                <div class="terminal-title">Claude Code</div>
+                <button class="terminal-copy-btn" onclick="copyTerminalCode(this, '/localize')">
+                  <svg width="12" height="12" viewBox="0 0 12 12" fill="none" xmlns="http://www.w3.org/2000/svg"><rect x="2" y="2" width="7" height="7" rx="1" stroke="currentColor" stroke-width="1"/><path d="M4 1H10C10.5523 1 11 1.44772 11 2V8" stroke="currentColor" stroke-width="1"/></svg>
+                  Copy
+                </button>
+              </div>
+              <div class="terminal-body">
+                <code><span class="terminal-prompt">&gt;</span>/localize</code>
+              </div>
+            </div>
+          </div>
+          <div class="skill-tab-panel" data-tab="cursor">
+            <div class="terminal">
+              <div class="terminal-header">
+                <div class="terminal-title">Cursor</div>
+                <button class="terminal-copy-btn" onclick="copyTerminalCode(this, '@localize')">
+                  <svg width="12" height="12" viewBox="0 0 12 12" fill="none" xmlns="http://www.w3.org/2000/svg"><rect x="2" y="2" width="7" height="7" rx="1" stroke="currentColor" stroke-width="1"/><path d="M4 1H10C10.5523 1 11 1.44772 11 2V8" stroke="currentColor" stroke-width="1"/></svg>
+                  Copy
+                </button>
+              </div>
+              <div class="terminal-body">
+                <code><span class="terminal-prompt">&gt;</span>@localize</code>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <h3 class="skill-heading">What you'll do</h3>
+        <div style="margin-top: 16px; display: flex; flex-direction: column; gap: 24px;">
+          <div style="display: flex; gap: 16px; align-items: flex-start;">
+            <div style="flex-shrink: 0; width: 28px; height: 28px; background: var(--gray-light); color: var(--black); border-radius: 6px; display: flex; align-items: center; justify-content: center; font-size: 14px; font-weight: 600; font-family: var(--font-mono); border: 1px solid var(--gray-border);">1</div>
+            <p class="card-text" style="flex: 1; margin: 2px 0 0 0;">Tell it which component or page has the final text.</p>
+          </div>
+          <div style="display: flex; gap: 16px; align-items: flex-start;">
+            <div style="flex-shrink: 0; width: 28px; height: 28px; background: var(--gray-light); color: var(--black); border-radius: 6px; display: flex; align-items: center; justify-content: center; font-size: 14px; font-weight: 600; font-family: var(--font-mono); border: 1px solid var(--gray-border);">2</div>
+            <p class="card-text" style="flex: 1; margin: 2px 0 0 0;">It shows a numbered list of the strings it found. Technical strings are filtered out for you.</p>
+          </div>
+          <div style="display: flex; gap: 16px; align-items: flex-start;">
+            <div style="flex-shrink: 0; width: 28px; height: 28px; background: var(--gray-light); color: var(--black); border-radius: 6px; display: flex; align-items: center; justify-content: center; font-size: 14px; font-weight: 600; font-family: var(--font-mono); border: 1px solid var(--gray-border);">3</div>
+            <p class="card-text" style="flex: 1; margin: 2px 0 0 0;">You pick which ones need translation (e.g. <code>1, 2, 4</code>, or <code>all</code>, or <code>none</code>).</p>
+          </div>
+          <div style="display: flex; gap: 16px; align-items: flex-start;">
+            <div style="flex-shrink: 0; width: 28px; height: 28px; background: var(--gray-light); color: var(--black); border-radius: 6px; display: flex; align-items: center; justify-content: center; font-size: 14px; font-weight: 600; font-family: var(--font-mono); border: 1px solid var(--gray-border);">4</div>
+            <p class="card-text" style="flex: 1; margin: 2px 0 0 0;">It generates the YAML file. This includes real values and translator descriptions, plus placeholders for the parts your engineer decides.</p>
+          </div>
+          <div style="display: flex; gap: 16px; align-items: flex-start;">
+            <div style="flex-shrink: 0; width: 28px; height: 28px; background: var(--gray-light); color: var(--black); border-radius: 6px; display: flex; align-items: center; justify-content: center; font-size: 14px; font-weight: 600; font-family: var(--font-mono); border: 1px solid var(--gray-border);">5</div>
+            <p class="card-text" style="flex: 1; margin: 2px 0 0 0;">It validates the file, commits it, and asks before pushing to your repo.</p>
+          </div>
+        </div>
+
+        <h3 class="skill-heading">What you get</h3>
+        <p class="card-text" style="margin-top: 0;">A <code>config/locales/translations/en-us.yml</code>:</p>
+        <div class="terminal">
+          <div class="terminal-header">
+            <div class="terminal-title">config/locales/translations/en-us.yml</div>
+          </div>
+          <div class="terminal-body">
+            <code><span style="color: #9cdcfe;">title</span>: <span style="color: #ce9178;">"PLACEHOLDER_FILE_TITLE"</span><br>
+<span style="color: #9cdcfe;">packages</span>:<br>
+&nbsp;&nbsp;- PLACEHOLDER_PACKAGE<br>
+<br>
+<span style="color: #9cdcfe;">parts</span>:<br>
+&nbsp;&nbsp;- <span style="color: #9cdcfe;">translation</span>:<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span style="color: #9cdcfe;">key</span>: <span style="color: #ce9178;">"txt.PLACEHOLDER.0001"</span><br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span style="color: #9cdcfe;">title</span>: <span style="color: #ce9178;">"Drawer title - Noun phrase - Heading of the edit-columns drawer."</span><br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span style="color: #9cdcfe;">value</span>: <span style="color: #ce9178;">"Edit columns"</span><br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span style="color: #9cdcfe;">screenshot</span>: <span style="color: #ce9178;">"PLACEHOLDER_SCREENSHOT"</span></code>
+          </div>
+        </div>
+
+        <h3 class="skill-heading">What the engineer finalizes</h3>
+        <p class="card-text" style="margin-top: 0;">The file is a ready-to-use draft, not a broken one. An engineer fills in a few placeholders that vary by team:</p>
+        <table class="skill-table">
+          <thead>
+            <tr>
+              <th>Placeholder</th>
+              <th style="width: 110px;">Who fills it</th>
+              <th>Why</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td><code>PLACEHOLDER_FILE_TITLE</code></td>
+              <td>Engineer</td>
+              <td>Document title, per team convention</td>
+            </tr>
+            <tr>
+              <td><code>PLACEHOLDER_PACKAGE</code></td>
+              <td>Engineer</td>
+              <td>Real Rosetta package name</td>
+            </tr>
+            <tr>
+              <td><code>txt.PLACEHOLDER.NNNN</code></td>
+              <td>Engineer</td>
+              <td>Key naming varies by team</td>
+            </tr>
+            <tr>
+              <td><code>PLACEHOLDER_SCREENSHOT</code></td>
+              <td>Engineer</td>
+              <td>Screenshot captured &amp; named after the final key</td>
+            </tr>
+          </tbody>
+        </table>
+        <p class="card-text" style="margin-top: 16px;">Everything else is ready to go. The string values, translator descriptions, formatting, pluralization, and interpolation all follow Zendesk standards and are String-Sweep-ready.</p>
+      </div>
+    </details>
+
+    <!-- Skill card: /localize-update -->
+    <details class="troubleshooting-card" style="width: calc(100% + 80px); margin-left: -40px; border: 1px solid var(--gray-border); border-radius: 8px; overflow: hidden; margin-bottom: 16px; background: transparent;">
+      <summary style="padding: 20px 40px; cursor: pointer; display: flex; align-items: center; justify-content: space-between; font-size: 15px; font-weight: 600; color: var(--gray-text); user-select: none; list-style: none;">
+        <code style="font-size: 14px; font-weight: 500;">localize-update</code>
+        <svg width="16" height="16" viewBox="0 0 20 20" fill="none" xmlns="http://www.w3.org/2000/svg" style="flex-shrink: 0; stroke: var(--gray-text);">
+          <path d="M5 7.5L10 12.5L15 7.5" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+        </svg>
+      </summary>
+      <div class="troubleshooting-content" style="padding: 0 40px 32px 40px; max-width: 680px;">
+        <h3 class="skill-heading">What it does</h3>
+        <p class="card-text">When content designers change some wording later, this skill updates only the strings you already prepared. It replaces just the <code>value</code> of existing entries. Your keys, descriptions, and structure stay the same, so you don't have to redo the whole process.</p>
+
+        <h3 class="skill-heading">When to use</h3>
+        <p class="card-text">Run this after a content revision, once you've already run <code>/localize</code>.</p>
+
+        <h3 class="skill-heading">Invoke it</h3>
+        <div class="skill-tabs-group">
+          <div class="skill-tabs">
+            <button class="skill-tab active" onclick="switchSkillTab(this, 'claude')">Claude Code</button>
+            <button class="skill-tab" onclick="switchSkillTab(this, 'cursor')">Cursor</button>
+          </div>
+          <div class="skill-tab-panel active" data-tab="claude">
+            <div class="terminal">
+              <div class="terminal-header">
+                <div class="terminal-title">Claude Code</div>
+                <button class="terminal-copy-btn" onclick="copyTerminalCode(this, '/localize-update')">
+                  <svg width="12" height="12" viewBox="0 0 12 12" fill="none" xmlns="http://www.w3.org/2000/svg"><rect x="2" y="2" width="7" height="7" rx="1" stroke="currentColor" stroke-width="1"/><path d="M4 1H10C10.5523 1 11 1.44772 11 2V8" stroke="currentColor" stroke-width="1"/></svg>
+                  Copy
+                </button>
+              </div>
+              <div class="terminal-body">
+                <code><span class="terminal-prompt">&gt;</span>/localize-update</code>
+              </div>
+            </div>
+          </div>
+          <div class="skill-tab-panel" data-tab="cursor">
+            <div class="terminal">
+              <div class="terminal-header">
+                <div class="terminal-title">Cursor</div>
+                <button class="terminal-copy-btn" onclick="copyTerminalCode(this, '@localize-update')">
+                  <svg width="12" height="12" viewBox="0 0 12 12" fill="none" xmlns="http://www.w3.org/2000/svg"><rect x="2" y="2" width="7" height="7" rx="1" stroke="currentColor" stroke-width="1"/><path d="M4 1H10C10.5523 1 11 1.44772 11 2V8" stroke="currentColor" stroke-width="1"/></svg>
+                  Copy
+                </button>
+              </div>
+              <div class="terminal-body">
+                <code><span class="terminal-prompt">&gt;</span>@localize-update</code>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <h3 class="skill-heading">What you'll do</h3>
+        <div style="margin-top: 16px; display: flex; flex-direction: column; gap: 24px;">
+          <div style="display: flex; gap: 16px; align-items: flex-start;">
+            <div style="flex-shrink: 0; width: 28px; height: 28px; background: var(--gray-light); color: var(--black); border-radius: 6px; display: flex; align-items: center; justify-content: center; font-size: 14px; font-weight: 600; font-family: var(--font-mono); border: 1px solid var(--gray-border);">1</div>
+            <p class="card-text" style="flex: 1; margin: 2px 0 0 0;">Tell it what changed. You can point it to a component to re-scan, or give it the old and new text directly.</p>
+          </div>
+          <div style="display: flex; gap: 16px; align-items: flex-start;">
+            <div style="flex-shrink: 0; width: 28px; height: 28px; background: var(--gray-light); color: var(--black); border-radius: 6px; display: flex; align-items: center; justify-content: center; font-size: 14px; font-weight: 600; font-family: var(--font-mono); border: 1px solid var(--gray-border);">2</div>
+            <p class="card-text" style="flex: 1; margin: 2px 0 0 0;">It shows the matched entry before changing anything.</p>
+          </div>
+          <div style="display: flex; gap: 16px; align-items: flex-start;">
+            <div style="flex-shrink: 0; width: 28px; height: 28px; background: var(--gray-light); color: var(--black); border-radius: 6px; display: flex; align-items: center; justify-content: center; font-size: 14px; font-weight: 600; font-family: var(--font-mono); border: 1px solid var(--gray-border);">3</div>
+            <p class="card-text" style="flex: 1; margin: 2px 0 0 0;">It swaps in the new text, re-validates, commits, and asks before pushing.</p>
+          </div>
+        </div>
+
+        <p class="card-text" style="margin-top: 24px;">Note: your engineer will need to recapture any screenshots for the strings you changed.</p>
+      </div>
+    </details>
+
     </div>
   </section>
 
@@ -1252,19 +1530,6 @@ Use a primary button, data table with sortable columns, and Flora spacing.</code
         </div>
 
         <div>
-          <h3 style="font-size: 15px; font-weight: 600; color: var(--gray-darker); margin: 0 0 8px 0;">Translation check</h3>
-          <div class="terminal">
-            <div class="terminal-header">
-              <span class="terminal-title">i18n</span>
-              <button class="terminal-copy" onclick="navigator.clipboard.writeText('./check-translations.sh')">Copy</button>
-            </div>
-            <div class="terminal-body">
-              <code><span class="terminal-prompt">$</span> ./check-translations.sh</code>
-            </div>
-          </div>
-        </div>
-
-        <div>
           <h3 style="font-size: 15px; font-weight: 600; color: var(--gray-darker); margin: 0 0 8px 0;">Accessibility audit</h3>
           <div class="terminal">
             <div class="terminal-header">
@@ -1310,9 +1575,9 @@ Use a primary button, data table with sortable columns, and Flora spacing.</code
     </div>
 
     <details id="npm-auth-error" class="troubleshooting-card" style="width: calc(100% + 80px); margin-left: -40px; border: 1px solid var(--gray-border); border-radius: 8px; overflow: hidden; margin-bottom: 16px; background: transparent;">
-      <summary style="padding: 24px 40px; cursor: pointer; display: flex; align-items: center; justify-content: space-between; font-size: 20px; font-weight: 600; color: var(--gray-text); user-select: none; list-style: none;">
-        <code style="font-size: 18px; font-weight: 500;">npm authentication error</code>
-        <svg width="20" height="20" viewBox="0 0 20 20" fill="none" xmlns="http://www.w3.org/2000/svg" style="flex-shrink: 0; stroke: var(--gray-text);">
+      <summary style="padding: 20px 40px; cursor: pointer; display: flex; align-items: center; justify-content: space-between; font-size: 15px; font-weight: 600; color: var(--gray-text); user-select: none; list-style: none;">
+        <code style="font-size: 14px; font-weight: 500;">npm authentication error</code>
+        <svg width="16" height="16" viewBox="0 0 20 20" fill="none" xmlns="http://www.w3.org/2000/svg" style="flex-shrink: 0; stroke: var(--gray-text);">
           <path d="M5 7.5L10 12.5L15 7.5" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
         </svg>
       </summary>
@@ -1535,6 +1800,21 @@ function copyTerminalCode(button, text) {
     }, 2000);
   }).catch(err => {
     console.error('Failed to copy:', err);
+  });
+}
+
+// Skill card editor tab switcher (Claude Code / Cursor), scoped per card
+function switchSkillTab(button, target) {
+  const tabs = button.closest('.skill-tabs');
+  const card = button.closest('.skill-tabs-group');
+
+  // Toggle active tab button within this group
+  tabs.querySelectorAll('.skill-tab').forEach(tab => tab.classList.remove('active'));
+  button.classList.add('active');
+
+  // Toggle matching panel within this group
+  card.querySelectorAll('.skill-tab-panel').forEach(panel => {
+    panel.classList.toggle('active', panel.getAttribute('data-tab') === target);
   });
 }
 
