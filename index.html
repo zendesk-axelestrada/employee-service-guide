@@ -340,6 +340,10 @@ a {
   transition: color 0.15s ease;
 }
 
+a:has(code) {
+  text-decoration: none;
+}
+
 a:hover {
   color: #5d3eed;
 }
@@ -706,10 +710,10 @@ a:hover {
     <a class="nav-item active" data-section="introduction">Introduction</a>
     <a class="nav-item" data-section="getting-started">Getting Started</a>
     <a class="nav-item" data-section="workflow">
-      Design to Development
+      Design-to-Code
     </a>
     <a class="nav-item disabled" aria-disabled="true" tabindex="-1">
-      Contribute to Code
+      Design-to-Production
       <span class="nav-badge soon">SOON</span>
     </a>
     <a class="nav-item" data-section="skills">
@@ -733,20 +737,35 @@ a:hover {
     <div class="content-wrapper">
     <div class="content-header">
       <div class="content-badge">INTRODUCTION</div>
-      <h1 class="content-title">Employee Service Design Kit</h1>
-      <p class="content-description">Ready-to-use shell templates for Employee Service products. Start prototyping in Cursor or your favorite tool. Iterate fast, share with your team, and hand off clean code to engineers.</p>
+      <h1 class="content-title">Design-to-Code for Employee Service</h1>
+      <div class="content-description">
+        <p>Design-to-Code is a way for product designers to work closer to production. With AI, more of the design process can now happen directly in code, and with tools like Cursor, Claude Code, or Codex, designers can turn product ideas into <strong>reusable code</strong> instead of relying mainly on static screens.</p>
+        <p style="margin-top: 16px;">The result is an interactive prototype grounded in the target production repository, giving stakeholders something they can use and giving engineers reusable code and implementation context to carry into development.</p>
+      </div>
     </div>
 
     <div class="content-card">
-      <h2 class="card-title">Why use Employee Service shells?</h2>
-      <p class="card-text">Full repositories contain hundreds of thousands of lines of code. This creates context overload for AI tools. They lose focus and produce inconsistent results. You waste time managing context, fixing errors, burning through tokens inefficiently, and waiting on slow AI response times.</p>
-      <p class="card-text">Employee Service shells give you exactly what you need: a complete Zendesk navigation framework. Focus on prototyping your feature. The shell includes the header with product tray, sidebar navigation, and all underlying structure. Build fast, test immediately, and share for feedback.</p>
+      <h2 class="card-title">Why Design-to-Code</h2>
+      <p class="card-text">Static designs are useful for exploring ideas, but they can leave important questions unanswered. How does the experience behave? What happens when there’s no data? Which states, interactions, and edge cases do we need to support? When all of those answers live in small annotations across a large set of Figma mocks, engineers are left navigating complex files, which increases ambiguity around the expected outcome. That’s without even mentioning the effort designers need to put in to make sure no important notes slip through the cracks.</p>
+      <p class="card-text">An interactive prototype lets PMs and other stakeholders experience the product before it’s implemented. It makes conversations more concrete, helps teams spot technical gaps earlier, and gives everyone a clearer understanding of what needs to be built, especially engineers. And because <strong>your handoff becomes code</strong>, it speaks the same language as engineering.</p>
+      <p class="card-text">Designers working with code add a new layer of value. When the work is grounded in the target production repository, it can use the right components, dependencies, patterns, and data shapes. Engineers can reuse what you create instead of starting from a static mock and translating everything into code from scratch.</p>
     </div>
 
     <div class="content-card">
-      <h2 class="card-title">What is the shell?</h2>
-      <p class="card-text">The shell is the complete Zendesk navigation framework, everything except your feature. It includes the header, sidebar, and structure built with Flora or Garden, depending on the product area.</p>
-      <p class="card-text">Your content goes in the <code>&lt;Main&gt;</code> area. The header, sidebar, and navigation stay fixed. Build your tables, forms, and workflows inside Main. The shell handles the rest.</p>
+      <h2 class="card-title">What you create</h2>
+      <p class="card-text">Design-to-Code produces 2 connected outcomes:</p>
+      <ul style="list-style: disc; padding-left: 24px; margin-top: 16px; display: flex; flex-direction: column; gap: 8px;">
+        <li style="font-size: 17px; line-height: 1.7; color: var(--gray-dark);"><strong>An interactive experience</strong> that people can use, review, and discuss</li>
+        <li style="font-size: 17px; line-height: 1.7; color: var(--gray-dark);"><strong>Reusable code and implementation context</strong> that engineers can carry into development</li>
+      </ul>
+      <p class="card-text" style="margin-top: 16px;">The interactive experience helps people understand how the product works. The code gives engineers a clearer starting point for implementation by showing what they can reuse and what they still need to build.</p>
+    </div>
+
+    <div class="content-card">
+      <h2 class="card-title">How you create it</h2>
+      <p class="card-text">To help designers get started quickly, the design kit uses <strong>product shells</strong>. These are prebuilt templates that include the Zendesk navigation framework and page structure, without the size and complexity of full production repositories. This means you can focus on the feature you’re designing instead of rebuilding the whole page from scratch every time.</p>
+      <p class="card-text">Shells are lightweight versions of the product pages designers work in most often. They come with pre-populated content and can evolve as teams use them in new projects. New shells can be added for other product areas, and existing ones can be updated to stay aligned with the real products.</p>
+      <p class="card-text">Your work happens inside the <code>&lt;Main&gt;</code> area. The shell takes care of the Zendesk navigation and basic page structure, so what you build already looks and feels like Zendesk from the start.</p>
     </div>
     </div>
 
@@ -770,38 +789,38 @@ a:hover {
 
     <div class="content-card">
       <h2 class="card-title">Benefits</h2>
-      <p class="card-text">Employee Service shells give you:</p>
+      <p class="card-text">Design-to-Code gives you:</p>
       <ul style="list-style: disc; padding-left: 24px; margin-top: 16px; display: flex; flex-direction: column; gap: 8px;">
         <li style="font-size: 17px; line-height: 1.7; color: var(--gray-dark);">
-          <strong>Speed:</strong> Start prototyping in minutes.
+          <strong>Speed:</strong> Start with a prebuilt product shell and focus on the feature you’re designing in seconds
         </li>
         <li style="font-size: 17px; line-height: 1.7; color: var(--gray-dark);">
-          <strong>Consistency:</strong> Every shell matches Zendesk's production UI.
+          <strong>Clarity:</strong> Give PMs and stakeholders an interactive experience they can use and discuss
         </li>
         <li style="font-size: 17px; line-height: 1.7; color: var(--gray-dark);">
-          <strong>AI-friendly:</strong> Optimized codebases maximize prompt efficiency, saving tokens, cost, and time.
+          <strong>Consistency:</strong> Keep your work aligned with Zendesk code, accessibility, and product standards
         </li>
         <li style="font-size: 17px; line-height: 1.7; color: var(--gray-dark);">
-          <strong>Production-ready:</strong> Clean, accessible code that's ready to hand off.
+          <strong>Reusable code:</strong> Give engineers code and implementation context they can carry into development
         </li>
         <li style="font-size: 17px; line-height: 1.7; color: var(--gray-dark);">
-          <strong>Shareable:</strong> Host prototypes on GitHub Pages.
+          <strong>Shareable output:</strong> Share prototypes for reviews and team discussions
         </li>
       </ul>
     </div>
 
     <div class="content-card">
       <h2 class="card-title">Who can use this</h2>
-      <p class="card-text">Use Employee Service shells to prototype or communicate product ideas:</p>
+      <p class="card-text">Design-to-Code brings product designers, PMs, and engineers onto the same page:</p>
       <ul style="list-style: disc; padding-left: 24px; margin-top: 16px; display: flex; flex-direction: column; gap: 8px;">
         <li style="font-size: 17px; line-height: 1.7; color: var(--gray-dark);">
-          <strong>Designers:</strong> Prototype features, test flows, and validate designs.
+          <strong>Product designers:</strong> Explore ideas, build interactions, and prepare reusable code
         </li>
         <li style="font-size: 17px; line-height: 1.7; color: var(--gray-dark);">
-          <strong>Product managers:</strong> Build interactive demos to align stakeholders.
+          <strong>PMs and stakeholders:</strong> Experience the product and review decisions before implementation
         </li>
         <li style="font-size: 17px; line-height: 1.7; color: var(--gray-dark);">
-          <strong>Anyone with an idea:</strong> Bring Employee Service features to life.
+          <strong>Engineers:</strong> Review the work in code, understand the design decisions, and reuse what fits the production implementation
         </li>
       </ul>
     </div>
@@ -814,7 +833,7 @@ a:hover {
     <div class="content-header">
       <div class="content-badge">SETUP</div>
       <h1 class="content-title">Getting started</h1>
-      <p class="content-description">Set up your shell template and start prototyping in five steps. No coding experience required.</p>
+      <p class="content-description">Set up a product shell and start a Design-to-Code project in 5 steps. You don’t need prior coding experience to follow this setup, but a basic understanding of terminal commands is recommended.</p>
     </div>
 
     <div class="content-card">
@@ -832,7 +851,7 @@ a:hover {
             </div>
           </div>
           <span style="font-size: 17px; line-height: 1.7; color: var(--gray-dark);">
-            <strong><a href="https://nodejs.org/" target="_blank">Node.js</a></strong>
+            <strong><a href="https://nodejs.org/" target="_blank">Node.js</a></strong> to run the project locally
           </span>
         </label>
         <label style="display: flex; align-items: flex-start; gap: 12px; cursor: pointer;">
@@ -846,7 +865,7 @@ a:hover {
             </div>
           </div>
           <span style="font-size: 17px; line-height: 1.7; color: var(--gray-dark);">
-            <strong>Zendesk GitHub access</strong>
+            <strong>Zendesk GitHub access</strong> with an SSH key set up to clone the design kit and create a repository when you’re ready to share your project
           </span>
         </label>
         <label style="display: flex; align-items: flex-start; gap: 12px; cursor: pointer;">
@@ -860,7 +879,7 @@ a:hover {
             </div>
           </div>
           <span style="font-size: 17px; line-height: 1.7; color: var(--gray-dark);">
-            <strong>Claude Code access</strong>
+            <strong>A code editor</strong> such as Cursor or VS Code
           </span>
         </label>
         <label style="display: flex; align-items: flex-start; gap: 12px; cursor: pointer;">
@@ -874,7 +893,7 @@ a:hover {
             </div>
           </div>
           <span style="font-size: 17px; line-height: 1.7; color: var(--gray-dark);">
-            <strong><a href="https://www.cursor.com/download" target="_blank">Code editor</a></strong>
+            <strong>An AI coding tool</strong> such as Cursor agents, Claude Code, or Codex
           </span>
         </label>
         <label style="display: flex; align-items: flex-start; gap: 12px; cursor: pointer;">
@@ -888,7 +907,7 @@ a:hover {
             </div>
           </div>
           <span style="font-size: 17px; line-height: 1.7; color: var(--gray-dark);">
-            <strong><a href="https://mcp-gateway.zende.sk/" target="_blank">MCP servers</a></strong>
+            <strong><a href="https://mcp-gateway.zende.sk/" target="_blank">MCP servers</a></strong> to connect your tools to Zendesk systems
           </span>
         </label>
       </div>
@@ -903,7 +922,7 @@ a:hover {
       </div>
       <div style="flex: 1; display: flex; flex-direction: column; gap: 8px;">
         <div style="color: var(--gray-dark); font-size: 17px; font-weight: 600; line-height: 1.5;">New to vibe coding?</div>
-        <div style="color: var(--gray-dark); font-size: 17px; font-weight: 400; line-height: 1.7;">Check out two great resources: <a href="https://zendesk.atlassian.net/wiki/spaces/CREAT/pages/7884767235/Cursor" target="_blank"><strong>Cursor Enablement Program</strong></a> by Andrii Lytvynko and <a href="https://jubilant-adventure-v3wo81w.pages.github.io/" target="_blank"><strong>Vibes to Production</strong></a> by Abi Iyer.</div>
+        <div style="color: var(--gray-dark); font-size: 17px; font-weight: 400; line-height: 1.7;">These resources can help you get familiar with the tools and workflow: <a href="https://zendesk.atlassian.net/wiki/spaces/CREAT/pages/7884767235/Cursor" target="_blank"><strong>Cursor Enablement Program</strong></a> by Andrii Lytvynko, <a href="https://jubilant-adventure-v3wo81w.pages.github.io/" target="_blank"><strong>Vibes to Production</strong></a> by Abi Iyer, and <a href="https://special-disco-mnr5jv5.pages.github.io/" target="_blank"><strong>GitHub 101</strong></a> by Stephanie Quemena.</div>
       </div>
     </div>
 
@@ -914,6 +933,7 @@ a:hover {
           <h2 class="card-title" style="margin-bottom: 0;">Clone the design kit</h2>
           <span style="display: inline-flex; align-items: center; justify-content: center; padding: 2px 8px; font-size: 12px; font-weight: 600; font-family: var(--font-sans); line-height: 16px; text-align: center; background: #F7E6F1; color: #5A0D51; border-radius: 4px; gap: 4px;">ONE TIME ONLY</span>
         </div>
+        <p class="card-text" style="margin-bottom: 16px;">Run these commands once:</p>
         <div class="terminal">
           <div class="terminal-header">
             <div class="terminal-title">Terminal</div>
@@ -931,8 +951,8 @@ a:hover {
             <div style="margin-top: 8px;"><span class="terminal-prompt">$</span><code>git clone git@github.com:zendesk/employee-service-design-kit.git</code></div>
           </div>
         </div>
-        <p class="card-text" style="margin-top: 16px;">Open Terminal (press <code>Cmd + Space</code>, type "Terminal", hit Enter), copy the script above, paste it in, and press Enter.</p>
-        <p class="card-text" style="margin-top: 16px;">This creates your workspace folders and downloads the design kit. You'll use this folder structure for every prototype.</p>
+        <p class="card-text" style="margin-top: 16px;">Open Terminal, copy the commands, paste them, and press Enter. This creates the folders for your design kits and Design-to-Code projects, then downloads the Employee Service Design Kit.</p>
+        <p class="card-text" style="margin-top: 16px;">You’ll use this folder structure for each project: <code>~/zendesk/prototypes</code>.</p>
       </div>
     </div>
 
@@ -940,6 +960,7 @@ a:hover {
       <div style="flex-shrink: 0; width: 32px; height: 32px;"></div>
       <div style="flex: 1;">
         <h2 class="card-title" style="margin-bottom: 12px;">Already cloned the design kit?</h2>
+        <p class="card-text" style="margin-bottom: 16px;">Get the latest product shells and skills before starting another project:</p>
         <div class="terminal">
           <div class="terminal-header">
             <div class="terminal-title">Terminal</div>
@@ -956,7 +977,6 @@ a:hover {
             <div style="margin-top: 8px;"><span class="terminal-prompt">$</span><code>git pull</code></div>
           </div>
         </div>
-        <p class="card-text" style="margin-top: 16px;">Run these commands to get the latest templates and scripts.</p>
       </div>
     </div>
 
@@ -964,6 +984,7 @@ a:hover {
       <div style="flex-shrink: 0; width: 32px; height: 32px; background: var(--gray-light); color: var(--black); border-radius: 6px; display: flex; align-items: center; justify-content: center; font-size: 15px; font-weight: 600; font-family: var(--font-mono); border: 1px solid var(--gray-border);">2</div>
       <div style="flex: 1;">
         <h2 class="card-title" style="margin-bottom: 12px;">Create a project folder</h2>
+        <p class="card-text" style="margin-bottom: 16px;">Create a folder for your project.</p>
         <div class="terminal">
           <div class="terminal-header">
             <div class="terminal-title">Terminal</div>
@@ -979,18 +1000,20 @@ a:hover {
             <div><span class="terminal-prompt">$</span><code>mkdir ~/zendesk/prototypes/my-new-project</code></div>
           </div>
         </div>
-        <p class="card-text" style="margin-top: 16px;">Skip Terminal if you want. Just create the folder in Finder. Go to <code>zendesk/prototypes</code> and add your project folder.</p>
-        <p class="card-text" style="margin-top: 16px;">Each prototype gets its own folder.</p>
+        <p class="card-text" style="margin-top: 16px;">Replace <code>my-new-project</code> with a short name that describes the work. You can also create the folder in Finder inside <code>zendesk/prototypes</code>.</p>
+        <p class="card-text" style="margin-top: 16px;">Each Design-to-Code project has its own folder.</p>
       </div>
     </div>
 
     <div class="content-card" style="display: flex; gap: 20px; align-items: flex-start;">
       <div style="flex-shrink: 0; width: 32px; height: 32px; background: var(--gray-light); color: var(--black); border-radius: 6px; display: flex; align-items: center; justify-content: center; font-size: 15px; font-weight: 600; font-family: var(--font-mono); border: 1px solid var(--gray-border);">3</div>
       <div style="flex: 1;">
-        <h2 class="card-title" style="margin-bottom: 12px;">Open in Cursor</h2>
+        <h2 class="card-title" style="margin-bottom: 12px;">Open the project</h2>
+        <p class="card-text">Open <code>~/zendesk/prototypes/my-new-project</code> in the code editor or AI coding tool you plan to use.</p>
+        <p class="card-text" style="margin-top: 16px;">In Cursor or VS Code:</p>
         <ol style="list-style: decimal; padding-left: 24px; margin-top: 16px; display: flex; flex-direction: column; gap: 8px;">
-          <li style="font-size: 17px; line-height: 1.7; color: var(--gray-dark);">Select <strong>File</strong> → <strong>Open Folder</strong> or press <code>Cmd + O</code></li>
-          <li style="font-size: 17px; line-height: 1.7; color: var(--gray-dark);">Navigate to <code>~/zendesk/prototypes/my-new-project</code></li>
+          <li style="font-size: 17px; line-height: 1.7; color: var(--gray-dark);">Select <strong>File</strong> → <strong>Open Folder</strong></li>
+          <li style="font-size: 17px; line-height: 1.7; color: var(--gray-dark);">Go to <code>~/zendesk/prototypes/my-new-project</code></li>
           <li style="font-size: 17px; line-height: 1.7; color: var(--gray-dark);">Select <strong>Open</strong></li>
         </ol>
       </div>
@@ -999,7 +1022,8 @@ a:hover {
     <div class="content-card" style="display: flex; gap: 20px; align-items: flex-start;">
       <div style="flex-shrink: 0; width: 32px; height: 32px; background: var(--gray-light); color: var(--black); border-radius: 6px; display: flex; align-items: center; justify-content: center; font-size: 15px; font-weight: 600; font-family: var(--font-mono); border: 1px solid var(--gray-border);">4</div>
       <div style="flex: 1;">
-        <h2 class="card-title" style="margin-bottom: 12px;">Run the setup script</h2>
+        <h2 class="card-title" style="margin-bottom: 12px;">Set up the product shell</h2>
+        <p class="card-text" style="margin-bottom: 16px;">Open the integrated terminal and run:</p>
         <div class="terminal">
           <div class="terminal-header">
             <div class="terminal-title">Terminal</div>
@@ -1015,16 +1039,16 @@ a:hover {
             <div><span class="terminal-prompt">$</span><code>~/zendesk/design-kits/employee-service-design-kit/scripts/setup-here.sh</code></div>
           </div>
         </div>
-        <p class="card-text" style="margin-top: 16px;">Switch to Cursor's integrated terminal now. Press <code>Ctrl + `</code> (backtick) or select <strong>Terminal</strong> → <strong>New Terminal</strong>.</p>
-        <p class="card-text" style="margin-top: 16px;">Copy the script, paste it in Terminal, and hit Enter. Pick your template from the wizard. This copies template files, installs dependencies, and sets up git. Takes about 30 seconds.</p>
-        <p class="card-text" style="margin-top: 16px;">If you run into issues with this step, visit <a href="#npm-auth-error" onclick="document.querySelector('[data-section=troubleshooting]').click(); setTimeout(() => { const card = document.getElementById('npm-auth-error'); card.open = true; card.scrollIntoView({ behavior: 'smooth', block: 'center' }); }, 100); return false;">Troubleshooting</a>.</p>
+        <p class="card-text" style="margin-top: 16px;">The setup will ask you to select a product shell. It then copies the shell into your project, installs its dependencies, and sets up Git. The process usually takes about 30 seconds.</p>
+        <p class="card-text" style="margin-top: 16px;">If the setup stops because of an npm authentication error, go to <a href="#npm-auth-error" onclick="document.querySelector('[data-section=troubleshooting]').click(); setTimeout(() => { const card = document.getElementById('npm-auth-error'); card.open = true; card.scrollIntoView({ behavior: 'smooth', block: 'center' }); }, 100); return false;">Troubleshooting</a>.</p>
       </div>
     </div>
 
     <div class="content-card" style="display: flex; gap: 20px; align-items: flex-start;">
       <div style="flex-shrink: 0; width: 32px; height: 32px; background: var(--gray-light); color: var(--black); border-radius: 6px; display: flex; align-items: center; justify-content: center; font-size: 15px; font-weight: 600; font-family: var(--font-mono); border: 1px solid var(--gray-border);">5</div>
       <div style="flex: 1;">
-        <h2 class="card-title" style="margin-bottom: 12px;">Start the dev server</h2>
+        <h2 class="card-title" style="margin-bottom: 12px;">Preview your project</h2>
+        <p class="card-text" style="margin-bottom: 16px;">Run this command to start a local version of your project:</p>
         <div class="terminal">
           <div class="terminal-header">
             <div class="terminal-title">Terminal</div>
@@ -1045,43 +1069,46 @@ a:hover {
             </div>
           </div>
         </div>
-        <p class="card-text" style="margin-top: 16px;">The dev server starts and shows a local URL (something like <code>http://localhost:5173/</code>). Open it in Cursor's browser.</p>
-        <p class="card-text" style="margin-top: 16px;">Changes show up automatically when Cursor Agents finish. No refresh needed.</p>
+        <p class="card-text" style="margin-top: 16px;">The command will give you a local URL, such as <code>http://localhost:5173/</code>. Open it in your tool’s browser, if available, or in your regular web browser.</p>
+        <p class="card-text" style="margin-top: 16px;">The page updates automatically when your project files change, so you can review the experience as you build.</p>
       </div>
     </div>
 
 
     <div class="content-card" id="youre-done-section" style="margin: 120px 0;">
-      <h2 class="card-title">You're done!</h2>
-      <p class="card-text">Your prototype is now running. Everything you see is:</p>
+      <h2 class="card-title">Your project is ready</h2>
+      <p class="card-text">Your product shell is now running. Your project includes:</p>
       <ul style="list-style: none; padding-left: 0; margin-top: 16px; display: flex; flex-direction: column; gap: 8px;">
         <li style="font-size: 17px; line-height: 1.7; color: var(--gray-dark);">
           <svg width="16" height="16" viewBox="0 0 16 16" fill="none" xmlns="http://www.w3.org/2000/svg" style="display: inline-block; margin-right: 8px; vertical-align: text-bottom;">
             <circle cx="8" cy="8" r="8" fill="#E4EAF6"/>
             <path d="M5 8L7 10L11 6" stroke="#1F335A" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
           </svg>
-          Using Flora and Garden libraries
+          <strong>A product shell</strong> with Zendesk navigation and page structure
         </li>
         <li style="font-size: 17px; line-height: 1.7; color: var(--gray-dark);">
           <svg width="16" height="16" viewBox="0 0 16 16" fill="none" xmlns="http://www.w3.org/2000/svg" style="display: inline-block; margin-right: 8px; vertical-align: text-bottom;">
             <circle cx="8" cy="8" r="8" fill="#E4EAF6"/>
             <path d="M5 8L7 10L11 6" stroke="#1F335A" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
           </svg>
-          Built to match Zendesk's production UI
+          <strong>Example content</strong> inside <code>&lt;Main&gt;</code> that you can replace
         </li>
         <li style="font-size: 17px; line-height: 1.7; color: var(--gray-dark);">
           <svg width="16" height="16" viewBox="0 0 16 16" fill="none" xmlns="http://www.w3.org/2000/svg" style="display: inline-block; margin-right: 8px; vertical-align: text-bottom;">
             <circle cx="8" cy="8" r="8" fill="#E4EAF6"/>
             <path d="M5 8L7 10L11 6" stroke="#1F335A" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
           </svg>
-          Pre-filled with content in the <code>&lt;Main&gt;</code> area
+          <strong>Design-to-Code skills</strong> you can use from your AI coding tool
         </li>
       </ul>
+      <p class="card-text" style="margin-top: 16px;">Some product shells include pages from <strong>multiple Zendesk products</strong>. For example, a shell might include Admin Center and Support pages, with navigation between them. If your project only needs one product area, ask your AI coding tool to remove the pages, navigation interaction, and code for the other area. This keeps your project focused and easier to work with.</p>
     </div>
 
     <div class="content-card">
-      <h2 class="card-title">Working with Cursor Agents and Claude Code</h2>
-      <p class="card-text">Use Cursor Agents and Claude Code together in one window. Cursor Agents build the UI and interactions. Claude Code handles complex workflows, generates mock data, refactors code, and connects to external tools. Cursor Agents build what you see, and Claude Code plans how it works.</p>
+      <h2 class="card-title">Ground your project</h2>
+      <p class="card-text">Running the product shell completes the setup, but your work isn’t grounded in production yet. Before you start building, use <code>match-repo</code> to give your AI coding tool context from the target production repository.</p>
+      <p class="card-text">This context helps your project refer to the right components, versions, dependencies, patterns, and data shapes from the start. You don’t need to understand every technical detail it finds. Later, the handoff step adds the relevant context to <code>HANDOFF.md</code>, so engineers can clearly see what they can reuse and what still needs to be built.</p>
+      <p class="card-text"><a href="#workflow" onclick="document.querySelector('[data-section=workflow]').click(); return false;"><strong>Go to Design-to-Code</strong></a> to continue.</p>
     </div>
 
     </div>
@@ -1093,10 +1120,13 @@ a:hover {
     <div class="content-header">
       <div class="content-badge">SKILLS</div>
       <h1 class="content-title">Skills</h1>
-      <p class="content-description">Skills are shortcuts you run right in your editor. Type <code>/name</code> in Claude Code or <code>@name</code> in Cursor, and the skill handles a task for you. Every prototype comes with them built in, so there's nothing to install.</p>
+      <div class="content-description">
+        <p>Skills are guided workflows that help your AI coding tool complete common Design-to-Code tasks. They can ground your project in a production repository, share your work, run quality checks, and prepare the engineering handoff.</p>
+        <p style="margin-top: 16px;">The included skills currently work with <strong>Claude Code and Cursor</strong>. Use <code>/name</code> in Claude Code or <code>@name</code> in Cursor. You can still use other AI coding tools to work on your project, but these commands are currently available only in those two tools.</p>
+      </div>
     </div>
 
-    <div class="skill-group-label">Prototyping</div>
+    <div class="skill-group-label">Design-to-Code workflow</div>
 
     <!-- Skill card: /match-repo -->
     <details id="skill-match-repo" class="troubleshooting-card" style="width: calc(100% + 80px); margin-left: -40px; border: 1px solid var(--gray-border); border-radius: 8px; overflow: hidden; margin-bottom: 16px; background: transparent;">
@@ -1108,10 +1138,11 @@ a:hover {
       </summary>
       <div class="troubleshooting-content" style="padding: 0 40px 32px 40px; max-width: 680px;">
         <h3 class="skill-heading">What it does</h3>
-        <p class="card-text">This skill grounds your prototype in the real production code. It asks which product area and which page you're prototyping, then reads the target repo straight from GitHub, including its dependency versions and data shapes. It saves what it learns to a file the AI follows as it builds. Your prototype uses the right versions, the right components, and the right data, so engineers can reuse the code instead of rebuilding it.</p>
+        <p class="card-text">This skill grounds your project in the target production repository. It asks which product area and page you’re working on, then reads the repository’s current versions, dependencies, component patterns, and available GraphQL data.</p>
+        <p class="card-text">It saves this context for your AI coding tool to use throughout the project. It also adds relevant repository details to the README when they’re available.</p>
 
         <h3 class="skill-heading">When to use</h3>
-        <p class="card-text">Run this first, right after you bring a design over from Figma. It sets up the context that later steps rely on.</p>
+        <p class="card-text">Run this after setting up your product shell and before building your feature. Run it again if the target repository or product area changes.</p>
 
         <h3 class="skill-heading">Invoke it</h3>
         <div class="skill-tabs-group">
@@ -1150,7 +1181,8 @@ a:hover {
         </div>
 
         <h3 class="skill-heading">What you get</h3>
-        <p class="card-text" style="margin-top: 0;">One file, <code>.claude/target-context.md</code>. Later steps read it to keep your prototype in line with the real repo. It also fills in the README's version line and any ownership details it can pull from the target repo.</p>
+        <p class="card-text" style="margin-top: 0;">Project context saved for the tool you’re using, such as <code>.claude/target-context.md</code> or <code>.cursor/target-context.md</code>. This file stays local and isn’t included when you share the project.</p>
+        <p class="card-text">The relevant context is added to <code>HANDOFF.md</code> later, so engineers don’t need access to the local file.</p>
       </div>
     </details>
 
@@ -1164,10 +1196,11 @@ a:hover {
       </summary>
       <div class="troubleshooting-content" style="padding: 0 40px 32px 40px; max-width: 680px;">
         <h3 class="skill-heading">What it does</h3>
-        <p class="card-text">This skill publishes your prototype for the first time. It creates a private GitHub repo that only Zendesk employees can see, pushes your code, and sets up a live GitHub Pages link you can share.</p>
+        <p class="card-text">This skill shares your project for the first time. It creates a private GitHub repository, pushes your code, and sets up a live internal site that your team can use and review.</p>
+        <p class="card-text">It also adds the project details, ownership information, status, and live link to the README.</p>
 
         <h3 class="skill-heading">When to use</h3>
-        <p class="card-text">Run this when you're ready to share your prototype with the team. Use it the first time only. For later changes, use <code>/publish-update</code>.</p>
+        <p class="card-text">Run this when you’re ready to share the experience with PMs, stakeholders, or engineers. Use it only the first time you share a project. For later changes, use <code>publish-update</code>.</p>
 
         <h3 class="skill-heading">Invoke it</h3>
         <div class="skill-tabs-group">
@@ -1206,7 +1239,7 @@ a:hover {
         </div>
 
         <h3 class="skill-heading">What you get</h3>
-        <p class="card-text" style="margin-top: 0;">A private repo and a live link you can share. It also wires up the deploy workflow and npm authentication for you.</p>
+        <p class="card-text" style="margin-top: 0;">A private GitHub repository and a live link you can share with your team. The skill also sets up the deployment workflow and npm authentication needed to keep the site running.</p>
       </div>
     </details>
 
@@ -1220,10 +1253,11 @@ a:hover {
       </summary>
       <div class="troubleshooting-content" style="padding: 0 40px 32px 40px; max-width: 680px;">
         <h3 class="skill-heading">What it does</h3>
-        <p class="card-text">This skill ships a new version of an already-published prototype to its live site. It reads what changed, suggests a version bump, and refreshes the README's version line — the date and the production repo it's based on — from your changes. There's no changelog to write by hand.</p>
+        <p class="card-text">This skill updates a project you’ve already shared. It reads what changed, recommends a version update, adds a short summary to the README, and asks for confirmation before pushing the changes.</p>
+        <p class="card-text">The live site rebuilds automatically after the update is pushed.</p>
 
         <h3 class="skill-heading">When to use</h3>
-        <p class="card-text">Run this any time you've made changes worth sharing, after you've published once with <code>/publish</code>.</p>
+        <p class="card-text">Run this whenever you’ve made changes worth sharing after using <code>publish</code>.</p>
 
         <h3 class="skill-heading">Invoke it</h3>
         <div class="skill-tabs-group">
@@ -1262,7 +1296,7 @@ a:hover {
         </div>
 
         <h3 class="skill-heading">What you get</h3>
-        <p class="card-text" style="margin-top: 0;">A bumped version, a refreshed README version line, and an updated live site.</p>
+        <p class="card-text" style="margin-top: 0;">An updated repo, a new entry in the README’s version history, and an updated live site.</p>
       </div>
     </details>
 
@@ -1276,10 +1310,12 @@ a:hover {
       </summary>
       <div class="troubleshooting-content" style="padding: 0 40px 32px 40px; max-width: 680px;">
         <h3 class="skill-heading">What it does</h3>
-        <p class="card-text">This skill checks that your prototype still matches the real target repo. It compares your work against the context <code>/match-repo</code> created, looking at versions, dependencies, components, and data shapes. It reports only where the two differ. It doesn't review your code quality. That stays with the engineer.</p>
+        <p class="card-text">This skill checks whether the feature you’re designing still aligns with the target production repository. It compares the project against the context created by <code>match-repo</code>, including versions, dependencies, component APIs, and data structures.</p>
+        <p class="card-text">It focuses only on the feature you identify. Product shell navigation, prebuilt pages, mock data, and other supporting code are excluded unless they’re part of the work you want engineers to reuse.</p>
+        <p class="card-text">This is an alignment check, not a general code review, and it doesn’t determine whether the code is production-ready.</p>
 
         <h3 class="skill-heading">When to use</h3>
-        <p class="card-text">Run this before you hand off to developers. Run <code>/match-repo</code> first, since this check compares against the context it creates.</p>
+        <p class="card-text">Run this when the solution is close to final and before preparing the engineering handoff. Run <code>match-repo</code> first so the skill knows which repository to compare against.</p>
 
         <h3 class="skill-heading">Invoke it</h3>
         <div class="skill-tabs-group">
@@ -1318,7 +1354,7 @@ a:hover {
         </div>
 
         <h3 class="skill-heading">What you get</h3>
-        <p class="card-text" style="margin-top: 0;">A list of the gaps between your prototype and the target repo, grouped by versions, dependencies, components, and data shapes, plus any places the repo drifts from the kit standard.</p>
+        <p class="card-text" style="margin-top: 0;">A list showing what aligns with the target repository and what needs attention. Each gap includes the smallest change that would bring the project closer to the production implementation.</p>
       </div>
     </details>
 
@@ -1332,10 +1368,20 @@ a:hover {
       </summary>
       <div class="troubleshooting-content" style="padding: 0 40px 32px 40px; max-width: 680px;">
         <h3 class="skill-heading">What it does</h3>
-        <p class="card-text">This skill packages your finished prototype for engineers. It reads your real code and writes a single <code>HANDOFF.md</code> that spells out what to reuse, what's throwaway scaffolding, and how the feature wires up to production data, so an engineer can pick it up from that one file.</p>
+        <p class="card-text">This skill prepares the project for engineering handoff. It reads the feature code and the context gathered throughout the project, then creates a self-contained <code>HANDOFF.md</code>.</p>
+        <p class="card-text">The file explains:</p>
+        <ul style="list-style: disc; padding-left: 24px; margin-top: 16px; display: flex; flex-direction: column; gap: 8px;">
+          <li style="font-size: 17px; line-height: 1.7; color: var(--gray-dark);">What engineers can reuse</li>
+          <li style="font-size: 17px; line-height: 1.7; color: var(--gray-dark);">Which parts only support the interactive experience</li>
+          <li style="font-size: 17px; line-height: 1.7; color: var(--gray-dark);">How the feature is expected to connect to production data</li>
+          <li style="font-size: 17px; line-height: 1.7; color: var(--gray-dark);">Which versions and dependencies engineers need to consider</li>
+          <li style="font-size: 17px; line-height: 1.7; color: var(--gray-dark);">The intended behavior, states, decisions, and open questions</li>
+          <li style="font-size: 17px; line-height: 1.7; color: var(--gray-dark);">What engineers still need to build</li>
+        </ul>
+        <p class="card-text" style="margin-top: 16px;">The skill preserves notes already added to <code>HANDOFF.md</code> and updates the file instead of replacing your work.</p>
 
         <h3 class="skill-heading">When to use</h3>
-        <p class="card-text">Run this when the prototype is done and you're ready for developers to pick it up. Run your quality gates first: <code>/repo-check</code>, <code>/localize</code>, and <code>/a11y-check</code>.</p>
+        <p class="card-text">Run this when the experience, content, and quality checks are complete. Before starting the handoff, run <code>repo-check</code>, <code>localize</code>, and <code>a11y-check</code>.</p>
 
         <h3 class="skill-heading">Invoke it</h3>
         <div class="skill-tabs-group">
@@ -1374,7 +1420,8 @@ a:hover {
         </div>
 
         <h3 class="skill-heading">What you get</h3>
-        <p class="card-text" style="margin-top: 0;">One <code>HANDOFF.md</code> that stands on its own, written from your real code. Your README is marked Ready for development, tagged as the v1.0.0 release, and built for production.</p>
+        <p class="card-text" style="margin-top: 0;">One <code>HANDOFF.md</code> based on the actual project code. It separates reusable feature work from product shell code, mock data, and other parts that exist only to support the interactive experience.</p>
+        <p class="card-text">The skill also marks the README as <strong>Ready for development</strong> and checks that the project builds successfully. This status means the Design-to-Code work is ready for engineering review. It doesn’t mean the code is production-ready.</p>
       </div>
     </details>
 
@@ -1390,10 +1437,11 @@ a:hover {
       </summary>
       <div class="troubleshooting-content" style="padding: 0 40px 32px 40px; max-width: 680px;">
         <h3 class="skill-heading">What it does</h3>
-        <p class="card-text">This skill prepares the final text of your prototype for the Zendesk translation process. You choose exactly which strings need translation. That means only your new text, not the template. It creates a Rosetta-compliant <code>i18n/en-us.yml</code> file that an engineer can drop into their repo.</p>
+        <p class="card-text">This skill prepares the final product content for Zendesk’s translation process. You identify the feature or page to review, and the skill finds its user-facing content while filtering out technical strings and product shell content.</p>
+        <p class="card-text">You choose which strings need translation. The skill then creates and validates an <code>i18n/en-us.yml</code> file with the product content and context translators need.</p>
 
         <h3 class="skill-heading">When to use</h3>
-        <p class="card-text">Run this once your content is final. That usually means you've explored options, shared with your team, iterated with engineering and product, and reviewed with content design. You can run it any time and update later, so there's no wrong moment.</p>
+        <p class="card-text">Run this when the product content is close to final, after reviewing it with product, engineering, and content design. If the content changes later, use <code>localize-update</code>.</p>
 
         <h3 class="skill-heading">Invoke it</h3>
         <div class="skill-tabs-group">
@@ -1435,28 +1483,28 @@ a:hover {
         <div style="margin-top: 16px; display: flex; flex-direction: column; gap: 24px;">
           <div style="display: flex; gap: 16px; align-items: flex-start;">
             <div style="flex-shrink: 0; width: 28px; height: 28px; background: var(--gray-light); color: var(--black); border-radius: 6px; display: flex; align-items: center; justify-content: center; font-size: 14px; font-weight: 600; font-family: var(--font-mono); border: 1px solid var(--gray-border);">1</div>
-            <p class="card-text" style="flex: 1; margin: 2px 0 0 0;">Tell it which component or page has the final text.</p>
+            <p class="card-text" style="flex: 1; margin: 2px 0 0 0;">Tell the skill which feature, component, or page contains the final content</p>
           </div>
           <div style="display: flex; gap: 16px; align-items: flex-start;">
             <div style="flex-shrink: 0; width: 28px; height: 28px; background: var(--gray-light); color: var(--black); border-radius: 6px; display: flex; align-items: center; justify-content: center; font-size: 14px; font-weight: 600; font-family: var(--font-mono); border: 1px solid var(--gray-border);">2</div>
-            <p class="card-text" style="flex: 1; margin: 2px 0 0 0;">It shows a numbered list of the strings it found. Technical strings are filtered out for you.</p>
+            <p class="card-text" style="flex: 1; margin: 2px 0 0 0;">Review the user-facing strings it finds</p>
           </div>
           <div style="display: flex; gap: 16px; align-items: flex-start;">
             <div style="flex-shrink: 0; width: 28px; height: 28px; background: var(--gray-light); color: var(--black); border-radius: 6px; display: flex; align-items: center; justify-content: center; font-size: 14px; font-weight: 600; font-family: var(--font-mono); border: 1px solid var(--gray-border);">3</div>
-            <p class="card-text" style="flex: 1; margin: 2px 0 0 0;">You pick which ones need translation (e.g. <code>1, 2, 4</code>, or <code>all</code>, or <code>none</code>).</p>
+            <p class="card-text" style="flex: 1; margin: 2px 0 0 0;">Choose which strings need translation</p>
           </div>
           <div style="display: flex; gap: 16px; align-items: flex-start;">
             <div style="flex-shrink: 0; width: 28px; height: 28px; background: var(--gray-light); color: var(--black); border-radius: 6px; display: flex; align-items: center; justify-content: center; font-size: 14px; font-weight: 600; font-family: var(--font-mono); border: 1px solid var(--gray-border);">4</div>
-            <p class="card-text" style="flex: 1; margin: 2px 0 0 0;">It generates the YAML file. This includes real values and translator descriptions, plus placeholders for the parts your engineer decides.</p>
+            <p class="card-text" style="flex: 1; margin: 2px 0 0 0;">Review the generated localization file and its translator descriptions</p>
           </div>
           <div style="display: flex; gap: 16px; align-items: flex-start;">
             <div style="flex-shrink: 0; width: 28px; height: 28px; background: var(--gray-light); color: var(--black); border-radius: 6px; display: flex; align-items: center; justify-content: center; font-size: 14px; font-weight: 600; font-family: var(--font-mono); border: 1px solid var(--gray-border);">5</div>
-            <p class="card-text" style="flex: 1; margin: 2px 0 0 0;">It validates the file, commits it, and asks before pushing to your repo.</p>
+            <p class="card-text" style="flex: 1; margin: 2px 0 0 0;">Confirm whether to commit and push the file</p>
           </div>
         </div>
 
         <h3 class="skill-heading">What you get</h3>
-        <p class="card-text" style="margin-top: 0;">A <code>i18n/en-us.yml</code>:</p>
+        <p class="card-text" style="margin-top: 0;">An <code>i18n/en-us.yml</code> file containing the selected product content and translator descriptions:</p>
         <div class="terminal">
           <div class="terminal-header">
             <div class="terminal-title">i18n/en-us.yml</div>
@@ -1476,7 +1524,13 @@ a:hover {
         </div>
 
         <h3 class="skill-heading">What the engineer finalizes</h3>
-        <p class="card-text" style="margin-top: 0;">The file is a ready-to-use draft, not a broken one. An engineer fills in a few placeholders that vary by team:</p>
+        <p class="card-text" style="margin-top: 0;">The engineer adds the repository-specific information that the Design-to-Code project can’t determine:</p>
+        <ul style="list-style: disc; padding-left: 24px; margin-top: 16px; margin-bottom: 16px; display: flex; flex-direction: column; gap: 8px;">
+          <li style="font-size: 17px; line-height: 1.7; color: var(--gray-dark);">The Rosetta package name</li>
+          <li style="font-size: 17px; line-height: 1.7; color: var(--gray-dark);">Final translation keys</li>
+          <li style="font-size: 17px; line-height: 1.7; color: var(--gray-dark);">Screenshots using the final keys</li>
+          <li style="font-size: 17px; line-height: 1.7; color: var(--gray-dark);">Any repository-specific file information</li>
+        </ul>
         <table class="skill-table">
           <thead>
             <tr>
@@ -1508,7 +1562,7 @@ a:hover {
             </tr>
           </tbody>
         </table>
-        <p class="card-text" style="margin-top: 16px;">Everything else is ready to go. The string values, translator descriptions, formatting, pluralization, and interpolation all follow Zendesk standards and are String-Sweep-ready.</p>
+        <p class="card-text" style="margin-top: 16px;">The product content, translator descriptions, formatting, pluralization, and interpolation are prepared for engineers to carry into the repository’s localization workflow.</p>
       </div>
     </details>
 
@@ -1522,10 +1576,11 @@ a:hover {
       </summary>
       <div class="troubleshooting-content" style="padding: 0 40px 32px 40px; max-width: 680px;">
         <h3 class="skill-heading">What it does</h3>
-        <p class="card-text">When content designers change some wording later, this skill updates only the strings you already prepared. It replaces just the <code>value</code> of existing entries. Your keys, descriptions, and structure stay the same, so you don't have to redo the whole process.</p>
+        <p class="card-text">This skill updates product content that was already prepared with <code>localize</code>. It changes the selected values while preserving existing keys, translator descriptions, and file structure.</p>
+        <p class="card-text">The skill shows what it matched before making changes and asks for confirmation before updating the file.</p>
 
         <h3 class="skill-heading">When to use</h3>
-        <p class="card-text">Run this after a content revision, once you've already run <code>/localize</code>.</p>
+        <p class="card-text">Run this whenever the product content changes after you’ve used <code>localize</code>.</p>
 
         <h3 class="skill-heading">Invoke it</h3>
         <div class="skill-tabs-group">
@@ -1567,19 +1622,19 @@ a:hover {
         <div style="margin-top: 16px; display: flex; flex-direction: column; gap: 24px;">
           <div style="display: flex; gap: 16px; align-items: flex-start;">
             <div style="flex-shrink: 0; width: 28px; height: 28px; background: var(--gray-light); color: var(--black); border-radius: 6px; display: flex; align-items: center; justify-content: center; font-size: 14px; font-weight: 600; font-family: var(--font-mono); border: 1px solid var(--gray-border);">1</div>
-            <p class="card-text" style="flex: 1; margin: 2px 0 0 0;">Tell it what changed. You can point it to a component to re-scan, or give it the old and new text directly.</p>
+            <p class="card-text" style="flex: 1; margin: 2px 0 0 0;">Tell the skill which component changed or provide the old and new text</p>
           </div>
           <div style="display: flex; gap: 16px; align-items: flex-start;">
             <div style="flex-shrink: 0; width: 28px; height: 28px; background: var(--gray-light); color: var(--black); border-radius: 6px; display: flex; align-items: center; justify-content: center; font-size: 14px; font-weight: 600; font-family: var(--font-mono); border: 1px solid var(--gray-border);">2</div>
-            <p class="card-text" style="flex: 1; margin: 2px 0 0 0;">It shows the matched entry before changing anything.</p>
+            <p class="card-text" style="flex: 1; margin: 2px 0 0 0;">Review and confirm the matching localization entry</p>
           </div>
           <div style="display: flex; gap: 16px; align-items: flex-start;">
             <div style="flex-shrink: 0; width: 28px; height: 28px; background: var(--gray-light); color: var(--black); border-radius: 6px; display: flex; align-items: center; justify-content: center; font-size: 14px; font-weight: 600; font-family: var(--font-mono); border: 1px solid var(--gray-border);">3</div>
-            <p class="card-text" style="flex: 1; margin: 2px 0 0 0;">It swaps in the new text, re-validates, commits, and asks before pushing.</p>
+            <p class="card-text" style="flex: 1; margin: 2px 0 0 0;">Update and validate the content, then choose whether to push the changes</p>
           </div>
         </div>
 
-        <p class="card-text" style="margin-top: 24px;">Note: your engineer will need to recapture any screenshots for the strings you changed.</p>
+        <p class="card-text" style="margin-top: 24px;">Any screenshots containing the changed content need to be captured again after the text is final.</p>
       </div>
     </details>
 
@@ -1595,10 +1650,11 @@ a:hover {
       </summary>
       <div class="troubleshooting-content" style="padding: 0 40px 32px 40px; max-width: 680px;">
         <h3 class="skill-heading">What it does</h3>
-        <p class="card-text">This skill helps you pick the right component before you build. When you're choosing a component or sketching an interaction, it recommends the correct Garden or Flora component and points out the accessibility implications first. It only gives advice. It never edits your code.</p>
+        <p class="card-text">This skill helps you make accessible design decisions while you build. It considers what an interaction needs to do, recommends the appropriate Garden or Flora component, and explains the effect of that choice on keyboard, screen reader, and other users.</p>
+        <p class="card-text">The skill provides guidance only. It doesn’t edit your code.</p>
 
         <h3 class="skill-heading">When to use</h3>
-        <p class="card-text">Run this early, while you're exploring. Use it any time you're deciding how to build something.</p>
+        <p class="card-text">Run this while exploring an interaction, selecting a component, or deciding how something should behave. Using it throughout the project helps you consider accessibility before the experience is complete.</p>
 
         <h3 class="skill-heading">Invoke it</h3>
         <div class="skill-tabs-group">
@@ -1637,7 +1693,7 @@ a:hover {
         </div>
 
         <h3 class="skill-heading">What you get</h3>
-        <p class="card-text" style="margin-top: 0;">Conversational guidance only. No files.</p>
+        <p class="card-text" style="margin-top: 0;">A recommendation based on the intended behavior, including relevant accessibility requirements and tradeoffs. The skill doesn’t create or change any files.</p>
       </div>
     </details>
 
@@ -1651,10 +1707,12 @@ a:hover {
       </summary>
       <div class="troubleshooting-content" style="padding: 0 40px 32px 40px; max-width: 680px;">
         <h3 class="skill-heading">What it does</h3>
-        <p class="card-text">This skill reviews a component for accessibility before you ship, built on the <a href="https://github.com/zendesk/claude-code-marketplace/tree/main/plugins/zendesk-accessibility" target="_blank" rel="noopener">zendesk-accessibility plugin</a>. You choose which component or interaction to check, not the whole shell. It checks the code against WCAG 2.2 AA and sorts what it finds into Critical, Major, and Minor. It explains each issue in plain language, then fixes it in place with your approval, using the right Garden or Flora components. It confirms each fix with your project's build.</p>
+        <p class="card-text">This skill reviews a feature, component, or interaction against WCAG 2.2 AA. You choose what to review, so it focuses on your work instead of checking the entire product shell.</p>
+        <p class="card-text">It groups its findings as Critical, Major, or Minor, explains how each issue affects users, and proposes a fix. It changes the code only after you approve the individual fixes.</p>
+        <p class="card-text">After applying the approved changes, the skill checks that the project still builds successfully. It also identifies anything that needs manual testing in the browser, with a keyboard, or with a screen reader.</p>
 
         <h3 class="skill-heading">When to use</h3>
-        <p class="card-text">Run this near the end, once your content and behavior are final.</p>
+        <p class="card-text">Run this when the content and behavior are close to final. Run it again after making substantial changes to the feature.</p>
 
         <h3 class="skill-heading">Invoke it</h3>
         <div class="skill-tabs-group">
@@ -1693,7 +1751,7 @@ a:hover {
         </div>
 
         <h3 class="skill-heading">What you get</h3>
-        <p class="card-text" style="margin-top: 0;">A plain-language list of what it found, and the fixes applied to your code once you approve them.</p>
+        <p class="card-text" style="margin-top: 0;">A plain-language accessibility review and the fixes you approve. Any behavior that can’t be confirmed from the code is clearly marked for manual testing.</p>
       </div>
     </details>
 
@@ -1716,25 +1774,13 @@ a:hover {
     <div class="content-wrapper">
     <div class="content-header">
       <div class="content-badge">PROCESS</div>
-      <h1 class="content-title">Design to Development</h1>
-      <p class="content-description">An experimental AI workflow that takes an idea from design to production, grounded in the real codebase from the first prompt.</p>
+      <h1 class="content-title">Design-to-Code</h1>
+      <p class="content-description">Design-to-Code starts once your product shell is running. This workflow helps you ground your project in the target production repository, build and review the experience, share it with your team, and prepare <strong>reusable code and implementation context</strong> for engineers.</p>
     </div>
 
     <div class="content-card">
-      <h2 class="card-title">What this is</h2>
-      <p class="card-text">This is an experimental workflow that uses AI to take an idea from design all the way to production. It brings together Cursor, Claude Code, and a set of skills that ground your prototype in the real Zendesk codebase.</p>
-    </div>
-
-    <div class="content-card">
-      <h2 class="card-title">What this is not</h2>
-      <p class="card-text">This isn't about contributing to production code. That's a separate topic, covered under <strong>Contribute to Code</strong>. Here, the goal is a realistic prototype that engineers can pick up with confidence.</p>
-    </div>
-
-    <div class="content-card">
-      <h2 class="card-title">First, connect the MCPs</h2>
-      <p class="card-text">This workflow depends on a set of MCP (Model Context Protocol) servers that connect your AI tools to Zendesk's systems. Connect them to <strong>both</strong> Claude Code <strong>and</strong> Cursor before you start. This is the one step you can't skip.</p>
-      <p class="card-text" style="margin-top: 16px;">You'll find them in the <a href="https://mcp-gateway.zende.sk/" target="_blank" rel="noopener">AI Gateway</a>.</p>
-      <p class="card-text" style="margin-top: 16px;">This workflow uses these MCP servers:</p>
+      <h2 class="card-title">Connect MCP servers</h2>
+      <p class="card-text">MCP servers give your AI coding tool access to the Zendesk context it needs while you work. You can connect them through the <a href="https://mcp-gateway.zende.sk/" target="_blank" rel="noopener">AI Gateway</a>.</p>
       <div style="margin-top: 16px; display: flex; flex-direction: column; gap: 12px;">
         <label style="display: flex; align-items: flex-start; gap: 12px; cursor: pointer;">
           <div class="custom-checkbox">
@@ -1747,7 +1793,7 @@ a:hover {
             </div>
           </div>
           <span style="font-size: 17px; line-height: 1.7; color: var(--gray-dark);">
-            <strong>Cerebro:</strong> Provides product, team, and project context, so the AI knows what the product area is and who owns it.
+            <strong>Cerebro:</strong> Finds product, team, and project context
           </span>
         </label>
         <label style="display: flex; align-items: flex-start; gap: 12px; cursor: pointer;">
@@ -1761,7 +1807,7 @@ a:hover {
             </div>
           </div>
           <span style="font-size: 17px; line-height: 1.7; color: var(--gray-dark);">
-            <strong>Figma:</strong> Pulls the visual design, specs, tokens, and structure straight from your Figma frames.
+            <strong>Figma:</strong> Reads frames, components, and design details
           </span>
         </label>
         <label style="display: flex; align-items: flex-start; gap: 12px; cursor: pointer;">
@@ -1775,7 +1821,7 @@ a:hover {
             </div>
           </div>
           <span style="font-size: 17px; line-height: 1.7; color: var(--gray-dark);">
-            <strong>GitHub:</strong> Reads the real target repos, including dependencies, versions, and component libraries.
+            <strong>GitHub:</strong> Reads target repositories, dependencies, and existing code patterns
           </span>
         </label>
         <label style="display: flex; align-items: flex-start; gap: 12px; cursor: pointer;">
@@ -1789,7 +1835,7 @@ a:hover {
             </div>
           </div>
           <span style="font-size: 17px; line-height: 1.7; color: var(--gray-dark);">
-            <strong>Google Drive:</strong> Opens specs, briefs, and docs that live in Slides, Docs, and Sheets.
+            <strong>Google Drive:</strong> Reads PRDs, specifications, and other project documents
           </span>
         </label>
         <label style="display: flex; align-items: flex-start; gap: 12px; cursor: pointer;">
@@ -1803,7 +1849,7 @@ a:hover {
             </div>
           </div>
           <span style="font-size: 17px; line-height: 1.7; color: var(--gray-dark);">
-            <strong>Unleash:</strong> Searches internal Zendesk knowledge, tools, and processes.
+            <strong>Unleash:</strong> Searches internal Zendesk knowledge, tools, and processes
           </span>
         </label>
         <label style="display: flex; align-items: flex-start; gap: 12px; cursor: pointer;">
@@ -1817,7 +1863,7 @@ a:hover {
             </div>
           </div>
           <span style="font-size: 17px; line-height: 1.7; color: var(--gray-dark);">
-            <strong>GraphQL:</strong> Reads the real Zendesk data shapes, so your mock data mirrors production.
+            <strong>GraphQL:</strong> Explores the data available through Zendesk GraphQL APIs
           </span>
         </label>
         <label style="display: flex; align-items: flex-start; gap: 12px; cursor: pointer;">
@@ -1831,92 +1877,84 @@ a:hover {
             </div>
           </div>
           <span style="font-size: 17px; line-height: 1.7; color: var(--gray-dark);">
-            <strong>Zendeskdev:</strong> Pulls official Zendesk developer docs and Help Center content.
+            <strong>Zendeskdev:</strong> Finds official Zendesk developer documentation and Help Center content
           </span>
         </label>
       </div>
+      <p class="card-text" style="margin-top: 16px;">You may not need every server for every project. However, connecting all of them is recommended so your AI coding tool can use the right context whenever the work requires it.</p>
     </div>
 
     <div class="content-card">
-      <h2 class="card-title">Your engineering pair</h2>
-      <p class="card-text">Cursor gives you more than a plain editor like VS Code. The AI agents are built in, they can see your code and your design context, and you iterate right in place.</p>
-      <p class="card-text" style="margin-top: 16px;">A simple way to think about it: Cursor Agents are your front-end engineer, and Claude Code is your back-end engineer. Cursor builds the UI. Claude Code cross-checks everything around your product, including real data, real repos, and design patterns for specific interactions.</p>
+      <h2 class="card-title">Work in the tools that fit your project</h2>
+      <p class="card-text">Design-to-Code isn’t tied to one AI coding tool. You can work in Cursor, VS Code, Codex, Claude Code, or another tool that supports your preferred workflow. You can also move between tools when one is better suited to a particular task.</p>
+      <p class="card-text" style="margin-top: 16px;">Avoid working in the same project directory with two AI coding tools at the same time. They may edit the same files, overwrite changes, or create conflicting instructions.</p>
     </div>
 
     <div class="content-card" style="display: flex; gap: 20px; align-items: flex-start;">
       <div style="flex-shrink: 0; width: 32px; height: 32px; background: var(--gray-light); color: var(--black); border-radius: 6px; display: flex; align-items: center; justify-content: center; font-size: 15px; font-weight: 600; font-family: var(--font-mono); border: 1px solid var(--gray-border);">1</div>
       <div style="flex: 1;">
-      <h2 class="card-title" style="margin-bottom: 12px;">Prototyping with vibe coding</h2>
-      <p class="card-text">Before you type your first prompt to Cursor, run <a href="#" onclick="goToSkill('skill-match-repo'); return false;"><code>/match-repo</code></a>. This is the most important step on this page. It grounds the prototype in your target repo, so you match real versions and components from the start, and it makes the rest of the workflow far smoother.</p>
-      <p class="card-text" style="margin-top: 16px;">Don't tackle everything at once. Rather than handing Cursor a whole-screen Figma frame, work at the component or page-section level. You control accuracy more easily, and you can focus on interaction details and accessibility, not just matching the Figma. Use the Figma URL through the figma MCP server so the prototype stays accurate.</p>
-
-      <div class="terminal" style="margin-top: 16px;">
-        <div class="terminal-header">
-          <div class="terminal-title">Example prompt</div>
-        </div>
-        <div class="terminal-body">
-          <code>Build the filter bar from this frame: <span style="color: #4fc3f7;">@https://www.figma.com/design/abc123?node-id=45</span><br>Use Garden. A primary <span style="color: #ce9178;">&lt;Button&gt;</span>, a <span style="color: #ce9178;">&lt;Combobox&gt;</span> in its default state, and a small ghost <span style="color: #ce9178;">&lt;Button&gt;</span> for reset.</code>
-        </div>
-      </div>
-
-      <p class="card-text" style="margin-top: 16px;">Then iterate. Share your work, gather feedback, and make changes.</p>
+      <h2 class="card-title" style="margin-bottom: 12px;">Ground your project</h2>
+      <p class="card-text">Before you start building, run <a href="#" onclick="goToSkill('skill-match-repo'); return false;"><code>match-repo</code></a>. This gives your AI coding tool context from the target production repository, including the versions, dependencies, components, patterns, and data structures used by the engineering team.</p>
+      <p class="card-text" style="margin-top: 16px;">The skill saves what it finds as project context that your AI coding tool can refer to throughout the project. The exact format and location depend on the tool you’re using.</p>
+      <p class="card-text" style="margin-top: 16px;">Grounding your project doesn’t copy the production repository into your product shell. It gives your AI coding tool enough information to make decisions that are better aligned with the code engineers already use.</p>
       </div>
     </div>
 
     <div class="content-card" style="display: flex; gap: 20px; align-items: flex-start;">
       <div style="flex-shrink: 0; width: 32px; height: 32px; background: var(--gray-light); color: var(--black); border-radius: 6px; display: flex; align-items: center; justify-content: center; font-size: 15px; font-weight: 600; font-family: var(--font-mono); border: 1px solid var(--gray-border);">2</div>
       <div style="flex: 1;">
-      <h2 class="card-title" style="margin-bottom: 12px;">Publishing and updating</h2>
-      <p class="card-text">When you're confident in your explorations, or you need to share with a PM or stakeholders, run <a href="#" onclick="goToSkill('skill-publish'); return false;"><code>/publish</code></a>. It creates the repo and a live website with your prototype on it.</p>
-      <p class="card-text" style="margin-top: 16px;">After you publish, run <a href="#" onclick="goToSkill('skill-publish-update'); return false;"><code>/publish-update</code></a> whenever you make changes. It pushes to the repo and rebuilds the live site.</p>
+      <h2 class="card-title" style="margin-bottom: 12px;">Build and iterate</h2>
+      <p class="card-text">The first result is only a starting point. Continue making design decisions, testing, and refining the experience.</p>
+      <p class="card-text" style="margin-top: 16px;">Keep the local preview open while you work. Review each change in the browser, try the interactions, and update your instructions when something doesn’t work as expected.</p>
+      <p class="card-text" style="margin-top: 16px;">Use <a href="#" onclick="goToSkill('skill-a11y-explore'); return false;"><code>a11y-explore</code></a> as you build new components and interactions. It can help you consider accessibility from the beginning instead of waiting until the end to review the full experience.</p>
+      <p class="card-text" style="margin-top: 16px;">Because your project is connected to the GitHub MCP server, you can also ask your AI coding tool to search production repositories for common patterns or similar solutions. This can help you understand how Zendesk already solves related problems and improve the reusable code you prepare for engineers.</p>
+      <p class="card-text" style="margin-top: 16px;">Be specific about what you’re building and ask your AI coding tool to focus on that part of the experience. Define this focus from the beginning so the feature code and handoff stay clear. This also helps separate reusable work from navigation components, prebuilt pages, mock data, and other parts of the product shell that support the interactive experience but aren’t intended for the production repository.</p>
       </div>
     </div>
 
     <div class="content-card" style="display: flex; gap: 20px; align-items: flex-start;">
       <div style="flex-shrink: 0; width: 32px; height: 32px; background: var(--gray-light); color: var(--black); border-radius: 6px; display: flex; align-items: center; justify-content: center; font-size: 15px; font-weight: 600; font-family: var(--font-mono); border: 1px solid var(--gray-border);">3</div>
       <div style="flex: 1;">
-      <h2 class="card-title" style="margin-bottom: 12px;">Quality checks before handoff</h2>
-      <p class="card-text">Think of this as getting your work dev-ready, the way you'd prepare Figma files for engineering, and then going a step further. Run these quality checks before you hand off. The order below is a good default, but the sequence is your call.</p>
-      <ul style="list-style: disc; padding-left: 24px; margin-top: 16px; display: flex; flex-direction: column; gap: 8px;">
-        <li style="font-size: 17px; line-height: 1.7; color: var(--gray-dark);">
-          <strong><a href="#" onclick="goToSkill('skill-repo-check'); return false;"><code>/repo-check</code></a>:</strong> Confirms the prototype still matches the real target repo across versions, dependencies, components, and data shapes, and that the repo follows the kit standard.
-        </li>
-        <li style="font-size: 17px; line-height: 1.7; color: var(--gray-dark);">
-          <strong>Localization (<a href="#" onclick="goToSkill('skill-localize'); return false;"><code>/localize</code></a>, <a href="#" onclick="goToSkill('skill-localize-update'); return false;"><code>/localize-update</code></a>):</strong> Prepares your final text for Zendesk's translation process.
-        </li>
-        <li style="font-size: 17px; line-height: 1.7; color: var(--gray-dark);">
-          <strong>Accessibility (<a href="#" onclick="goToSkill('skill-a11y-explore'); return false;"><code>/a11y-explore</code></a>, <a href="#" onclick="goToSkill('skill-a11y-check'); return false;"><code>/a11y-check</code></a>):</strong> Gets interactions and components to WCAG 2.2 AA, exploring choices early and reviewing before handoff.
-        </li>
-      </ul>
+      <h2 class="card-title" style="margin-bottom: 12px;">Share and update your work</h2>
+      <p class="card-text">When you’re ready to share the experience with PMs, stakeholders, or engineers, run <a href="#" onclick="goToSkill('skill-publish'); return false;"><code>publish</code></a>. This creates a private GitHub repository and a live internal site that your team can use and review.</p>
+      <p class="card-text" style="margin-top: 16px;">After making changes, run <a href="#" onclick="goToSkill('skill-publish-update'); return false;"><code>publish-update</code></a> to update the repository and live site. This keeps the shared experience aligned with your latest work.</p>
       </div>
     </div>
 
     <div class="content-card" style="display: flex; gap: 20px; align-items: flex-start;">
       <div style="flex-shrink: 0; width: 32px; height: 32px; background: var(--gray-light); color: var(--black); border-radius: 6px; display: flex; align-items: center; justify-content: center; font-size: 15px; font-weight: 600; font-family: var(--font-mono); border: 1px solid var(--gray-border);">4</div>
       <div style="flex: 1;">
-      <h2 class="card-title" style="margin-bottom: 12px;">Handoff</h2>
-      <p class="card-text">When the work is ready for engineers, run <a href="#" onclick="goToSkill('skill-handoff'); return false;"><code>/handoff</code></a>. It reads your real code and writes a single <code>HANDOFF.md</code> that stands on its own. An engineer opens that one file to see what to reuse, what's throwaway scaffolding, and how to wire the feature to production data.</p>
-      <p class="card-text" style="margin-top: 16px;">It also marks your README Ready for development, tags the v1.0.0 release, and builds the prototype, so the engineering team gets a clean package to pick up.</p>
+      <h2 class="card-title" style="margin-bottom: 12px;">Run quality checks</h2>
+      <p class="card-text">Run the quality checks when the content and solution are close to final:</p>
+      <ul style="list-style: disc; padding-left: 24px; margin-top: 16px; display: flex; flex-direction: column; gap: 8px;">
+        <li style="font-size: 17px; line-height: 1.7; color: var(--gray-dark);">
+          <strong>Repository alignment:</strong> Run <a href="#" onclick="goToSkill('skill-repo-check'); return false;"><code>repo-check</code></a> to find differences between your project and the target production repository
+        </li>
+        <li style="font-size: 17px; line-height: 1.7; color: var(--gray-dark);">
+          <strong>Localization:</strong> Run <a href="#" onclick="goToSkill('skill-localize'); return false;"><code>localize</code></a> to prepare the final product content for Zendesk’s translation process
+        </li>
+        <li style="font-size: 17px; line-height: 1.7; color: var(--gray-dark);">
+          <strong>Accessibility:</strong> Run <a href="#" onclick="goToSkill('skill-a11y-check'); return false;"><code>a11y-check</code></a> to review the completed components and interactions against Zendesk accessibility standards
+        </li>
+      </ul>
+      <p class="card-text" style="margin-top: 16px;">If the product content changes after running <code>localize</code>, use <a href="#" onclick="goToSkill('skill-localize-update'); return false;"><code>localize-update</code></a> to update the localization files.</p>
+      </div>
+    </div>
+
+    <div class="content-card" style="display: flex; gap: 20px; align-items: flex-start;">
+      <div style="flex-shrink: 0; width: 32px; height: 32px; background: var(--gray-light); color: var(--black); border-radius: 6px; display: flex; align-items: center; justify-content: center; font-size: 15px; font-weight: 600; font-family: var(--font-mono); border: 1px solid var(--gray-border);">5</div>
+      <div style="flex: 1;">
+      <h2 class="card-title" style="margin-bottom: 12px;">Prepare the engineering handoff</h2>
+      <p class="card-text">When the work is ready for engineers, run <a href="#" onclick="goToSkill('skill-handoff'); return false;"><code>handoff</code></a>. The skill reads your project and creates a <code>HANDOFF.md</code> file explaining what engineers can reuse, which parts only support the interactive experience, and what still needs to be connected or built in production.</p>
+      <p class="card-text" style="margin-top: 16px;">Ask your AI coding tool to capture every relevant note in <code>HANDOFF.md</code>, including the decisions and annotations you would usually add to your Figma files. Engineers should be able to understand the work from this file, so review it carefully and make sure it covers the intended behavior, states, design decisions, reusable code, production connections, and open questions.</p>
+      <p class="card-text" style="margin-top: 16px;">This gives engineers a clearer starting point than static Figma designs and annotations alone.</p>
       </div>
     </div>
 
     <div class="content-card">
-      <h2 class="card-title">Where the workflow is still evolving</h2>
-      <p class="card-text">This is an experiment, and some essential pieces are still in discovery:</p>
-      <ul style="list-style: disc; padding-left: 24px; margin-top: 16px; display: flex; flex-direction: column; gap: 8px;">
-        <li style="font-size: 17px; line-height: 1.7; color: var(--gray-dark);">
-          <strong>Collaboration:</strong> Having more than one person work on the same project.
-        </li>
-        <li style="font-size: 17px; line-height: 1.7; color: var(--gray-dark);">
-          <strong>Multiple explorations:</strong> Comparing several versions side by side, the way you would in Figma.
-        </li>
-        <li style="font-size: 17px; line-height: 1.7; color: var(--gray-dark);">
-          <strong>Content reviews:</strong> Making reviews with the content team easier, since today they're still manual.
-        </li>
-        <li style="font-size: 17px; line-height: 1.7; color: var(--gray-dark);">
-          <strong>The skills themselves:</strong> Testing this first version in real projects to find the weak spots and improve them.
-        </li>
-      </ul>
+      <h2 class="card-title">Next: Design-to-Production</h2>
+      <p class="card-text">The outcome of Design-to-Code is <strong>not production-ready code</strong>. It’s a streamlined way for designers to work closer to code, reduce ambiguity, and prepare a stronger handoff for engineering. Engineers still decide what can be reused and complete the work required by the production repository.</p>
+      <p class="card-text" style="margin-top: 16px;">Design-to-Production is a separate, more advanced path where designers contribute directly to production repositories, submit PRs, and follow the same development process as engineers while using AI tools to help write the code. It requires deeper technical knowledge, and the process varies across repositories and teams. Guidance for Design-to-Production is coming soon.</p>
     </div>
     </div>
   </section>
@@ -1927,7 +1965,7 @@ a:hover {
     <div class="content-header">
       <div class="content-badge">HELP</div>
       <h1 class="content-title">Troubleshooting</h1>
-      <p class="content-description">Common issues and solutions for setting up and using Employee Service shells.</p>
+      <p class="content-description">If something stops you from setting up or working on a Design-to-Code project, start with the fixes below. Keep the <strong>full error message</strong> available so you can use it to understand what went wrong or ask for help.</p>
     </div>
 
     <details id="npm-auth-error" class="troubleshooting-card" style="width: calc(100% + 80px); margin-left: -40px; border: 1px solid var(--gray-border); border-radius: 8px; overflow: hidden; margin-bottom: 16px; background: transparent;">
@@ -1938,13 +1976,13 @@ a:hover {
         </svg>
       </summary>
       <div class="troubleshooting-content" style="padding: 0 40px 32px 40px; max-width: 680px;">
-        <p class="card-text" style="margin-top: 32px;">If <code>npm install</code> fails with authentication errors, authenticate with Zendesk's npm registry. You only need to do this once per machine.</p>
+        <p class="card-text" style="margin-top: 32px;">If the product shell setup stops while installing dependencies and the terminal shows an npm authentication error, connect your machine to Zendesk’s npm registry. You usually need to do this only once per machine.</p>
 
         <div style="margin-top: 48px;">
           <div style="display: flex; gap: 16px; align-items: flex-start;">
             <div style="flex-shrink: 0; width: 28px; height: 28px; background: var(--gray-light); color: var(--black); border-radius: 6px; display: flex; align-items: center; justify-content: center; font-size: 14px; font-weight: 600; font-family: var(--font-mono); border: 1px solid var(--gray-border);">1</div>
             <div style="flex: 1;">
-              <h3 style="font-size: 17px; font-weight: 600; color: var(--black); margin: 0 0 12px 0;">Add registry to <code>~/.npmrc</code></h3>
+              <h3 style="font-size: 17px; font-weight: 600; color: var(--black); margin: 0 0 12px 0;">Add the Zendesk registries to <code>~/.npmrc</code></h3>
               <div class="terminal">
                 <div class="terminal-header">
                   <div class="terminal-title">~/.npmrc</div>
@@ -1954,7 +1992,7 @@ a:hover {
 <span style="color: #ce9178;">@zendesk-ui:registry</span>=<span style="color: #4fc3f7;">https://zdrepo.jfrog.io/artifactory/api/npm/npm/</span></code>
                 </div>
               </div>
-              <p class="card-text" style="margin-top: 16px;">Create this file in your home directory if it doesn't exist.</p>
+              <p class="card-text" style="margin-top: 16px;">Open <code>~/.npmrc</code> and add both lines. If the file doesn’t exist, create it in your home directory.</p>
             </div>
           </div>
         </div>
@@ -1963,7 +2001,7 @@ a:hover {
           <div style="display: flex; gap: 16px; align-items: flex-start;">
             <div style="flex-shrink: 0; width: 28px; height: 28px; background: var(--gray-light); color: var(--black); border-radius: 6px; display: flex; align-items: center; justify-content: center; font-size: 14px; font-weight: 600; font-family: var(--font-mono); border: 1px solid var(--gray-border);">2</div>
             <div style="flex: 1;">
-              <h3 style="font-size: 17px; font-weight: 600; color: var(--black); margin: 0 0 12px 0;">Authenticate with Zendesk LDAP</h3>
+              <h3 style="font-size: 17px; font-weight: 600; color: var(--black); margin: 0 0 12px 0;">Sign in to both registries</h3>
               <div class="terminal">
                 <div class="terminal-header">
                   <div class="terminal-title">Terminal</div>
@@ -1980,7 +2018,7 @@ a:hover {
                   <div style="margin-top: 8px;"><span class="terminal-prompt">$</span><code>npm login --registry=https://zdrepo.jfrog.io/artifactory/api/npm/npm/ --scope=@zendesk-ui</code></div>
                 </div>
               </div>
-              <p class="card-text" style="margin-top: 16px;">Once you're authenticated, run the setup script again.</p>
+              <p class="card-text" style="margin-top: 16px;">Follow the prompts using your Zendesk credentials. When both commands finish, run the product shell setup again.</p>
             </div>
           </div>
         </div>
@@ -1996,7 +2034,7 @@ a:hover {
     <div class="content-header">
       <div class="content-badge">GET IN TOUCH</div>
       <h1 class="content-title">Contact</h1>
-      <p class="content-description">Questions or feedback? Reach out anytime.</p>
+      <p class="content-description">Contact me if you need help starting a Design-to-Code project, want to add or update a product shell, or have feedback on the workflow and skills.</p>
     </div>
 
     <div style="
@@ -2088,6 +2126,7 @@ a:hover {
         </div>
       </div>
     </div>
+
     </div>
   </section>
 
@@ -2284,7 +2323,7 @@ function createConfetti() {
   }, 4000);
 }
 
-// Trigger confetti when "You're done!" section becomes visible
+// Trigger confetti when "Your project is ready" reaches the lower-middle viewport
 let confettiTriggered = false;
 const youreDoneObserver = new IntersectionObserver((entries) => {
   entries.forEach(entry => {
@@ -2294,7 +2333,7 @@ const youreDoneObserver = new IntersectionObserver((entries) => {
       youreDoneObserver.disconnect();
     }
   });
-}, { threshold: 0.5 });
+}, { threshold: 0, rootMargin: '0px 0px -35% 0px' });
 
 const youreDoneSection = document.getElementById('youre-done-section');
 if (youreDoneSection) {
